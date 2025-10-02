@@ -24,17 +24,30 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     // Optimisations pour la production
-    minify: 'esbuild', // Utiliser esbuild au lieu de terser (plus rapide, déjà inclus)
+    minify: 'terser', // Utiliser Terser pour une meilleure compression que esbuild
     target: 'esnext', // Code plus moderne et plus petit
-    cssMinify: true,
+    cssMinify: 'esbuild', // Garder esbuild pour CSS (plus rapide)
     // Chunking optimal pour de meilleures performances
     rollupOptions: {
       output: {
-        // Split vendors pour améliorer le cache
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'ui-vendor': ['framer-motion', 'lucide-react'],
-          'particles': ['@tsparticles/react', '@tsparticles/slim', '@tsparticles/engine'],
+        // Split vendors pour améliorer le cache et réduire les tailles
+        manualChunks: (id) => {
+          // React et core
+          if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+            return 'react-vendor';
+          }
+          // UI libraries
+          if (id.includes('framer-motion') || id.includes('lucide-react') || id.includes('@radix-ui')) {
+            return 'ui-vendor';
+          }
+          // Particles (lazy loaded anyway)
+          if (id.includes('@tsparticles') || id.includes('particles')) {
+            return 'particles';
+          }
+          // Autres node_modules dans un chunk séparé
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
         },
         // Nommer les chunks de manière cohérente pour le cache
         chunkFileNames: 'assets/js/[name]-[hash].js',
@@ -43,12 +56,23 @@ export default defineConfig(({ mode }) => ({
       },
     },
     // Optimisation des assets
-    assetsInlineLimit: 4096, // Images < 4kb seront inline en base64
-    chunkSizeWarningLimit: 500, // Limite plus stricte pour éviter les gros bundles
+    assetsInlineLimit: 2048, // Réduire pour inliner moins d'assets
+    chunkSizeWarningLimit: 300, // Limite encore plus stricte
     sourcemap: false, // Désactiver les sourcemaps en production
     // Compression CSS supplémentaire
     cssCodeSplit: true,
-    // Minification supplémentaire
+    // Minification supplémentaire avec Terser
+    terserOptions: {
+      compress: {
+        drop_console: true, // Supprimer les console.log en production
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug'],
+      },
+      mangle: {
+        safari10: true,
+      },
+    },
+    // Optimisations supplémentaires
     reportCompressedSize: true,
   },
 }));

@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { useServiceWorker } from "./hooks/useServiceWorker";
 
 // Lazy load pages and heavy components for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -38,21 +39,26 @@ const router = createBrowserRouter([
   },
 ]);
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <ThemeProvider>
-        <Suspense fallback={null}>
-          <ParticlesBackground />
-        </Suspense>
-        <Toaster />
-        <Sonner />
-        <Suspense fallback={<PageLoader />}>
-          <RouterProvider router={router} />
-        </Suspense>
-      </ThemeProvider>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  // Enregistrer le service worker pour la mise en cache
+  useServiceWorker();
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <ThemeProvider>
+          <Suspense fallback={null}>
+            <ParticlesBackground />
+          </Suspense>
+          <Toaster />
+          <Sonner />
+          <Suspense fallback={<PageLoader />}>
+            <RouterProvider router={router} />
+          </Suspense>
+        </ThemeProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

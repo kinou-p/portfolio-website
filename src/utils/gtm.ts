@@ -1,4 +1,5 @@
 // Configuration et initialisation de Google Tag Manager avec gestion du consentement
+// Chargement différé pour optimiser les performances LCP/FCP
 
 declare global {
   interface Window {
@@ -7,32 +8,49 @@ declare global {
   }
 }
 
-// Initialiser le dataLayer si il n'existe pas
-window.dataLayer = window.dataLayer || [];
+let gtmLoaded = false;
 
-// Configuration du consentement par défaut (refusé jusqu'à acceptation)
-if (typeof window !== 'undefined' && window.gtag) {
-  window.gtag('consent', 'default', {
-    'analytics_storage': 'denied',
-    'ad_storage': 'denied',
-    'functionality_storage': 'granted',
-    'security_storage': 'granted',
-  });
+// Charger GTM uniquement après le consentement de l'utilisateur
+const loadGTMScript = () => {
+  if (gtmLoaded) return;
+  
+  // Initialiser le dataLayer
+  window.dataLayer = window.dataLayer || [];
+  
+  // Charger le script GTM de manière asynchrone après un délai
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-5V6TCG4C';
+  
+  // Ajouter le script après l'événement load pour ne pas bloquer le rendu initial
+  if (document.readyState === 'complete') {
+    document.head.appendChild(script);
+  } else {
+    window.addEventListener('load', () => {
+      // Délai supplémentaire pour prioriser le contenu
+      setTimeout(() => {
+        document.head.appendChild(script);
+      }, 1000);
+    });
+  }
+  
+  gtmLoaded = true;
+};
 
+export const initializeGTM = () => {
   // Vérifier si l'utilisateur a déjà donné son consentement
   const cookieConsent = localStorage.getItem('cookieConsent');
   const analyticsEnabled = localStorage.getItem('analyticsEnabled');
 
+  // Charger GTM uniquement si les cookies sont acceptés
   if (cookieConsent === 'accepted' && analyticsEnabled === 'true') {
-    window.gtag('consent', 'update', {
-      'analytics_storage': 'granted'
-    });
+    loadGTMScript();
   }
-}
-
-export const initializeGTM = () => {
-  // Cette fonction peut être utilisée pour des initialisations supplémentaires si nécessaire
-  console.log('Google Tag Manager initialized');
+  
+  // Sinon, attendre le consentement
+  window.addEventListener('cookieConsentAccepted', () => {
+    loadGTMScript();
+  });
 };
 
 export const trackEvent = (eventName: string, parameters?: Record<string, any>) => {

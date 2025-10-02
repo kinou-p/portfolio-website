@@ -15,7 +15,10 @@ export const CookieBanner = () => {
     localStorage.setItem("analyticsEnabled", "true");
     hideBanner();
     
-    // Activer Google Tag Manager
+    // Émettre un événement pour charger GTM
+    window.dispatchEvent(new Event('cookieConsentAccepted'));
+    
+    // Activer Google Tag Manager si déjà chargé
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('consent', 'update', {
         'analytics_storage': 'granted'

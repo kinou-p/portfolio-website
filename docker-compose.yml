@@ -1,9 +1,12 @@
+version: '3.8'
+
 services:
   portfolio-website:
     restart: unless-stopped
     build:
-      context: .
+      context: https://github.com/kinou-p/portfolio-website.git#main
       dockerfile: Dockerfile
+    image: portfolio-website:latest
     container_name: portfolio-website
     networks:
       - portfolio
@@ -23,7 +26,14 @@ services:
       - "traefik.http.routers.portfolio-website-http.middlewares=redirect-to-https"
       - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
       - "traefik.http.middlewares.redirect-to-https.redirectscheme.permanent=true"
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
 networks:
   portfolio:
     external: true
+

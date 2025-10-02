@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 interface ProjectCardProps {
   title: string;
@@ -7,9 +8,18 @@ interface ProjectCardProps {
   icon: React.ReactNode;
   image?: string;
   delay?: number;
+  projectId?: string;
 }
 
-export const ProjectCard = ({ title, description, icon, image, delay = 0 }: ProjectCardProps) => {
+export const ProjectCard = ({ title, description, icon, image, delay = 0, projectId }: ProjectCardProps) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (projectId) {
+      navigate(`/project/${projectId}`);
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -17,6 +27,8 @@ export const ProjectCard = ({ title, description, icon, image, delay = 0 }: Proj
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
       whileHover={{ y: -5 }}
+      onClick={handleClick}
+      className={projectId ? "cursor-pointer" : ""}
     >
       <Card className="h-full hover:shadow-lg transition-all duration-300 border-border/50 bg-card/50 backdrop-blur relative overflow-hidden">
         {image && (

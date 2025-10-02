@@ -71,6 +71,7 @@ export const ProjectsSection = () => {
               icon={project.icon}
               image={project.image}
               delay={index * 0.1}
+              projectId={project.key}
             />
           ))}
         </div>

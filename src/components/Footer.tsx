@@ -105,9 +105,12 @@ export const Footer = () => {
                       element.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
-                  className="justify-start h-auto p-2 text-muted-foreground hover:text-foreground"
+                  className="justify-start h-auto p-2 text-muted-foreground hover:text-foreground hover:bg-transparent relative group"
                 >
-                  {t(`nav.${item}`)}
+                  <span className="relative">
+                    {t(`nav.${item}`)}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+                  </span>
                 </Button>
               ))}
             </nav>
@@ -129,10 +132,13 @@ export const Footer = () => {
                   variant="ghost"
                   size="sm"
                   onClick={link.onClick}
-                  className="justify-start h-auto p-2 text-muted-foreground hover:text-foreground"
+                  className="justify-start h-auto p-2 text-muted-foreground hover:text-foreground hover:bg-transparent relative group"
                 >
                   <span className="mr-2">{link.icon}</span>
-                  {link.label}
+                  <span className="relative">
+                    {link.label}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+                  </span>
                 </Button>
               ))}
             </nav>

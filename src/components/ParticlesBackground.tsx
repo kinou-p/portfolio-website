@@ -26,7 +26,7 @@ export const ParticlesBackground = () => {
           value: "transparent",
         },
       },
-      fpsLimit: 120,
+      fpsLimit: 60,
         interactivity: {
           events: {
             onClick: {
@@ -40,10 +40,10 @@ export const ParticlesBackground = () => {
           },
           modes: {
             push: {
-              quantity: 4,
+              quantity: 2,
             },
             repulse: {
-              distance: 200,
+              distance: 150,
               duration: 0.4,
             },
           },
@@ -66,14 +66,14 @@ export const ParticlesBackground = () => {
               default: "out" as const,
             },
             random: false,
-            speed: 2,
+            speed: 1.5,
             straight: false,
           },
           number: {
             density: {
               enable: true,
             },
-            value: 80,
+            value: 70,
           },
           opacity: {
             value: { min: 0.1, max: theme === "dark" ? 0.5 : 0.6 },

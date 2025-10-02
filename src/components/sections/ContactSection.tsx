@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Mail, Github, Send, Share2, Briefcase } from "lucide-react";
+import { Mail, Github, Send, Share2, Briefcase, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -100,7 +100,7 @@ export const ContactSection = () => {
             transition={{ duration: 0.5 }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-semibold mb-6">Restons en contact</h3>
+            <h3 className="text-2xl font-semibold mb-6">{t("contact.stayInTouch")}</h3>
             <div className="space-y-4">
               {contacts.map((contact, index) => (
                 <motion.a
@@ -111,22 +111,27 @@ export const ContactSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                  className="block"
                 >
-                  <Card className="hover:shadow-md transition-all duration-300 border-border/50 bg-card/50 backdrop-blur cursor-pointer">
-                    <CardContent className="p-4 flex items-center space-x-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                        {contact.icon}
-                      </div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">
-                          {contact.label}
-                        </p>
-                        <p className="font-medium">{contact.value}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                    <Card className="hover:shadow-md transition-all duration-300 border-border/50 bg-card/50 backdrop-blur cursor-pointer group">
+                      <CardContent className="p-4 flex items-center justify-between">
+                        <div className="flex items-center space-x-4">
+                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                            {contact.icon}
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground">
+                              {contact.label}
+                            </p>
+                            <p className="font-medium">{contact.value}</p>
+                          </div>
+                        </div>
+                        <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 </motion.a>
               ))}
               
@@ -135,23 +140,27 @@ export const ContactSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                transition={{ duration: 0.2 }}
+                whileHover={{ x: 5 }}
+                onClick={handleShare}
+                className="cursor-pointer"
               >
-                <Button
-                  onClick={handleShare}
-                  variant="outline"
-                  className="w-full p-4 h-auto justify-start space-x-4 hover:shadow-md transition-all duration-300 border-border/50 bg-card/50 backdrop-blur"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
-                    <Share2 className="w-6 h-6" />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-sm text-muted-foreground">
-                      Partager
-                    </p>
-                    <p className="font-medium">Partager mon portfolio</p>
-                  </div>
-                </Button>
+                <Card className="hover:shadow-md transition-all duration-300 border-border/50 bg-card/50 backdrop-blur group">
+                  <CardContent className="p-4 flex items-center justify-between">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                        <Share2 className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-muted-foreground">
+                          {t("contact.share")}
+                        </p>
+                        <p className="font-medium">{t("contact.sharePortfolio")}</p>
+                      </div>
+                    </div>
+                    <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />
+                  </CardContent>
+                </Card>
               </motion.div>
             </div>
           </motion.div>
@@ -165,13 +174,13 @@ export const ContactSection = () => {
           >
             <Card className="border-border/50 bg-card/50 backdrop-blur">
               <CardContent className="p-6">
-                <h3 className="text-2xl font-semibold mb-6">Envoyez-moi un message</h3>
+                <h3 className="text-2xl font-semibold mb-6">{t("contact.sendMessage")}</h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <Input
                         name="name"
-                        placeholder="Votre nom"
+                        placeholder={t("contact.name")}
                         value={formData.name}
                         onChange={handleInputChange}
                         required
@@ -181,7 +190,7 @@ export const ContactSection = () => {
                       <Input
                         name="email"
                         type="email"
-                        placeholder="Votre email"
+                        placeholder={t("contact.emailPlaceholder")}
                         value={formData.email}
                         onChange={handleInputChange}
                         required
@@ -191,7 +200,7 @@ export const ContactSection = () => {
                   <div>
                     <Input
                       name="subject"
-                      placeholder="Sujet"
+                      placeholder={t("contact.subject")}
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
@@ -200,7 +209,7 @@ export const ContactSection = () => {
                   <div>
                     <Textarea
                       name="message"
-                      placeholder="Votre message..."
+                      placeholder={t("contact.messagePlaceholder")}
                       rows={5}
                       value={formData.message}
                       onChange={handleInputChange}
@@ -209,7 +218,7 @@ export const ContactSection = () => {
                   </div>
                   <Button type="submit" className="w-full" size="lg">
                     <Send className="w-4 h-4 mr-2" />
-                    Envoyer le message
+                    {t("contact.send")}
                   </Button>
                 </form>
               </CardContent>

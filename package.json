@@ -11,8 +11,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "optimize-images": "node scripts/optimize-images.js",
-    "analyze": "node scripts/analyze-bundle.js",
-    "analyze:js": "node scripts/analyze-js-bundle.js"
+    "analyze": "node scripts/analyze-bundle.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

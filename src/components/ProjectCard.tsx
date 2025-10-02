@@ -27,16 +27,16 @@ export const ProjectCard = ({ title, description, icon, image, technologies, del
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.2, delay }}
-      whileHover={{ y: -8, transition: { duration: 0.2 } }}
+      transition={{ duration: 0.5, delay }}
+      whileHover={{ y: -5 }}
       onClick={handleClick}
       className={projectId ? "cursor-pointer" : ""}
     >
-      <Card className="h-full hover:shadow-xl transition-all duration-200 ease-out border-border/50 bg-card/50 backdrop-blur relative overflow-hidden group">
+      <Card className="h-full hover:shadow-lg transition-all duration-300 border-border/50 bg-card/50 backdrop-blur relative overflow-hidden group">
         {/* Indicateur cliquable en bas à droite */}
         {projectId && (
-          <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-all duration-200 ease-out group-hover:scale-125">
-            <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform duration-200 ease-out" />
+          <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+            <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-0.5 transition-transform duration-300" />
           </div>
         )}
         

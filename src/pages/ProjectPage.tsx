@@ -12,7 +12,6 @@ import { SkillBadge } from "@/components/SkillBadge";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { projectsData } from "@/data/projects";
-import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const ProjectPageContent = () => {
@@ -289,11 +288,9 @@ const ProjectPageContent = () => {
 
 const ProjectPage = () => {
   return (
-    <ThemeProvider>
-      <LanguageProvider>
-        <ProjectPageContent />
-      </LanguageProvider>
-    </ThemeProvider>
+    <LanguageProvider>
+      <ProjectPageContent />
+    </LanguageProvider>
   );
 };
 

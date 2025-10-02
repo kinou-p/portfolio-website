@@ -8,7 +8,7 @@ export const translations = {
     },
     hero: {
       title: "Alexandre Pommier",
-      subtitle: "Étudiant a 42 en informatique, je cherche un emploi afin de compléter ma formation académique par une expérience professionnelle qui a du sens. Je suis ouvert à de nombreuses propositions en rapport avec mes études et suis prêt à discuter de mon parcours plus amplement lors d'un entretien.",
+      subtitle: "Étudiant en informatique à l'école 42, je développe mes compétences techniques à travers des projets innovants et challengeants. Passionné par les technologies modernes, je m'intéresse particulièrement au développement web, aux systèmes et à l'infrastructure.",
       cta1: "Voir mes projets",
       cta2: "Me contacter",
     },

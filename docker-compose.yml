@@ -6,7 +6,6 @@ services:
     build:
       context: https://github.com/kinou-p/portfolio-website.git#main
       dockerfile: Dockerfile
-    image: portfolio-website:latest
     container_name: portfolio-website
     networks:
       - portfolio
@@ -14,7 +13,7 @@ services:
       - "traefik.enable=true"
       
       # Configuration HTTPS
-      
+
       - "traefik.http.routers.portfolio-website.rule=Host(`alexandre-pommier.com`)"
       - "traefik.http.routers.portfolio-website.entrypoints=https"
       - "traefik.http.routers.portfolio-website.tls=true"

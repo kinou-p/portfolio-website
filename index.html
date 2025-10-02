@@ -26,7 +26,11 @@
     <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-    <!-- Google Fonts - Optimisé avec display=swap -->
+    <!-- Preload des ressources critiques pour optimiser le chemin critique -->
+    <!-- Preload du CSS principal (inline dans le HTML généré par Vite) -->
+    <link rel="modulepreload" href="/src/main.tsx">
+    
+    <!-- Google Fonts - Optimisé avec display=swap et chargement asynchrone -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript>
@@ -35,6 +39,33 @@
 
     <!-- Google Tag Manager sera chargé dynamiquement après consentement pour optimiser LCP/FCP -->
     <!-- Voir src/utils/gtm.ts et src/main.tsx pour l'implémentation -->
+    
+    <!-- Optimisation du rendu initial -->
+    <style>
+      /* Critical CSS pour éviter le FOUC (Flash of Unstyled Content) */
+      #root {
+        min-height: 100vh;
+        background: hsl(222.2 84% 4.9%); /* Couleur de fond dark par défaut */
+      }
+      
+      /* Spinner de chargement inline pour un feedback immédiat */
+      .initial-loader {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 48px;
+        height: 48px;
+        border: 3px solid rgba(139, 92, 246, 0.2);
+        border-top-color: rgb(139, 92, 246);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        to { transform: translate(-50%, -50%) rotate(360deg); }
+      }
+    </style>
   </head>
 
   <body>
@@ -42,7 +73,10 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5V6TCG4C"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
-    <div id="root"></div>
+    <div id="root">
+      <!-- Loader initial visible immédiatement -->
+      <div class="initial-loader"></div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

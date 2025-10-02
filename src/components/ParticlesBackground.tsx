@@ -8,16 +8,25 @@ export const ParticlesBackground = () => {
   const { theme } = useTheme();
 
   useEffect(() => {
-    // Retarder l'initialisation des particules pour ne pas bloquer le premier rendu
-    const timer = setTimeout(() => {
+    // Utiliser requestIdleCallback pour initialiser dès que le navigateur est idle
+    // Cela permet de démarrer plus tôt sans bloquer le thread principal
+    const idleCallback = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
+    
+    const idleId = idleCallback(() => {
       initParticlesEngine(async (engine) => {
         await loadSlim(engine);
       }).then(() => {
         setInit(true);
       });
-    }, 1000); // Attendre 1 seconde après le chargement initial
+    }, { timeout: 1000 }); // Fallback timeout de 1s si le navigateur ne devient jamais idle
 
-    return () => clearTimeout(timer);
+    return () => {
+      if (window.cancelIdleCallback) {
+        window.cancelIdleCallback(idleId);
+      } else {
+        clearTimeout(idleId);
+      }
+    };
   }, []);
 
   const particlesLoaded = async (container) => {

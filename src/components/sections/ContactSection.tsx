@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Mail, Github, Send, Share2 } from "lucide-react";
+import { Mail, Github, Send, Share2, Briefcase } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,6 +28,12 @@ export const ContactSection = () => {
       label: t("contact.github"),
       value: "kinou-p",
       href: "https://github.com/kinou-p",
+    },
+    {
+      icon: <Briefcase className="w-6 h-6" />,
+      label: "Malt",
+      value: "Alexandre Pommier",
+      href: "https://www.malt.fr/profile/alexandrepommier",
     },
   ];
 

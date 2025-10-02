@@ -6,17 +6,73 @@ export const SkillsSection = () => {
   const { t } = useLanguage();
 
   const languages = [
-    { name: "JavaScript", icon: "📜" },
-    { name: "TypeScript", icon: "📘" },
-    { name: "Python", icon: "🐍" },
-    { name: "C/C++", icon: "⚙️" },
+    { 
+      name: "JavaScript", 
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+    },
+    { 
+      name: "TypeScript", 
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+    },
+    { 
+      name: "Python", 
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+    },
+    { 
+      name: "C/C++", 
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+    },
+    { 
+      name: "HTML5", 
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+    },
+    { 
+      name: "CSS3", 
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+    },
   ];
 
   const frameworks = [
-    { name: "React", icon: "⚛️" },
-    { name: "Node.js", icon: "📗" },
-    { name: "Docker", icon: "🐳" },
-    { name: "Linux", icon: "🐧" },
+    { 
+      name: "React", 
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+    },
+    { 
+      name: "Node.js", 
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+    },
+    { 
+      name: "NestJS", 
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg"
+    },
+    { 
+      name: "Docker", 
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+    },
+    { 
+      name: "Linux", 
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+    },
+    { 
+      name: "PostgreSQL", 
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+    },
+    { 
+      name: "MongoDB", 
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
+    },
+    { 
+      name: "MySQL", 
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+    },
+    { 
+      name: "Ansible", 
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg"
+    },
+    { 
+      name: "WordPress", 
+      iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-original.svg"
+    },
   ];
 
   return (
@@ -52,7 +108,7 @@ export const SkillsSection = () => {
                 <SkillBadge
                   key={skill.name}
                   name={skill.name}
-                  icon={skill.icon}
+                  iconUrl={skill.iconUrl}
                   delay={index * 0.1}
                 />
               ))}
@@ -73,7 +129,7 @@ export const SkillsSection = () => {
                 <SkillBadge
                   key={skill.name}
                   name={skill.name}
-                  icon={skill.icon}
+                  iconUrl={skill.iconUrl}
                   delay={index * 0.1}
                 />
               ))}

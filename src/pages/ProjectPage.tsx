@@ -69,6 +69,7 @@ const ProjectPageContent = () => {
                   key={tech.name}
                   name={tech.name}
                   icon={tech.icon}
+                  iconUrl={tech.iconUrl}
                   delay={index * 0.05}
                 />
               ))}

@@ -10,7 +10,7 @@ export interface ProjectData {
   solution: { fr: string; en: string };
   images: string[];
   mainImage: string;
-  technologies: { name: string; color?: string; icon?: string }[];
+  technologies: { name: string; color?: string; icon?: string; iconUrl?: string }[];
   githubUrl?: string;
   demoUrl?: string;
 }
@@ -62,12 +62,12 @@ export const projectsData: Record<string, ProjectData> = {
     mainImage: "/images/projects/homemade_nas.png",
     images: ["/images/projects/homemade_nas.png"],
     technologies: [
-      { name: "OpenMediaVault" },
-      { name: "Docker" },
-      { name: "Traefik" },
-      { name: "Linux" },
-      { name: "Home Assistant" },
-      { name: "Portainer" },
+      { name: "OpenMediaVault", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/debian/debian-original.svg" },
+      { name: "Docker", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+      { name: "Traefik", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" },
+      { name: "Linux", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
+      { name: "Home Assistant", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+      { name: "Portainer", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
     ],
   },
   transcendence: {
@@ -116,12 +116,12 @@ export const projectsData: Record<string, ProjectData> = {
     mainImage: "/images/projects/pong.png",
     images: ["/images/projects/pong.png"],
     technologies: [
-      { name: "React", icon: "⚛️" },
-      { name: "TypeScript" },
-      { name: "NestJS" },
-      { name: "PostgreSQL" },
-      { name: "WebSocket" },
-      { name: "Docker" },
+      { name: "React", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+      { name: "TypeScript", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
+      { name: "NestJS", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" },
+      { name: "PostgreSQL", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+      { name: "WebSocket", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+      { name: "Docker", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
     ],
   },
   cloud: {
@@ -170,11 +170,11 @@ export const projectsData: Record<string, ProjectData> = {
     mainImage: "/images/projects/cloud_1.png",
     images: ["/images/projects/cloud_1.png"],
     technologies: [
-      { name: "Docker", icon: "🐳" },
-      { name: "Ansible" },
-      { name: "WordPress" },
-      { name: "MySQL" },
-      { name: "Linux" },
+      { name: "Docker", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+      { name: "Ansible", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg" },
+      { name: "WordPress", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-original.svg" },
+      { name: "MySQL", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+      { name: "Linux", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
     ],
   },
   minishell: {
@@ -223,10 +223,10 @@ export const projectsData: Record<string, ProjectData> = {
     mainImage: "/images/projects/minishell.png",
     images: ["/images/projects/minishell.png"],
     technologies: [
-      { name: "C" },
-      { name: "Linux" },
-      { name: "POSIX" },
-      { name: "Make" },
+      { name: "C", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" },
+      { name: "Linux", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
+      { name: "POSIX", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unix/unix-original.svg" },
+      { name: "Make", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cmake/cmake-original.svg" },
     ],
   },
   cube3d: {
@@ -275,10 +275,10 @@ export const projectsData: Record<string, ProjectData> = {
     mainImage: "/images/projects/cub3d.png",
     images: ["/images/projects/cub3d.png"],
     technologies: [
-      { name: "C" },
-      { name: "MiniLibX" },
-      { name: "Raycasting" },
-      { name: "Make" },
+      { name: "C", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" },
+      { name: "MiniLibX", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" },
+      { name: "Raycasting", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" },
+      { name: "Make", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cmake/cmake-original.svg" },
     ],
   },
   etsidemain: {
@@ -336,10 +336,10 @@ export const projectsData: Record<string, ProjectData> = {
       "/images/sites/etsidemain/tel.png"
     ],
     technologies: [
-      { name: "HTML5" },
-      { name: "CSS3" },
-      { name: "JavaScript" },
-      { name: "SEO" },
+      { name: "HTML5", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+      { name: "CSS3", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
+      { name: "JavaScript", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+      { name: "SEO", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg" },
     ],
     demoUrl: "https://etsidemain.com",
   },
@@ -398,11 +398,11 @@ export const projectsData: Record<string, ProjectData> = {
       "/images/sites/avopieces/tel.png"
     ],
     technologies: [
-      { name: "React", icon: "⚛️" },
-      { name: "Node.js", icon: "📗" },
-      { name: "MongoDB" },
-      { name: "OpenAI" },
-      { name: "TypeScript" },
+      { name: "React", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+      { name: "Node.js", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+      { name: "MongoDB", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
+      { name: "OpenAI", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+      { name: "TypeScript", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
     ],
     demoUrl: "https://avopieces.fr",
   },

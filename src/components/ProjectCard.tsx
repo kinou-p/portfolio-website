@@ -7,11 +7,12 @@ interface ProjectCardProps {
   description: string;
   icon: React.ReactNode;
   image?: string;
+  technologies?: { name: string; iconUrl?: string }[];
   delay?: number;
   projectId?: string;
 }
 
-export const ProjectCard = ({ title, description, icon, image, delay = 0, projectId }: ProjectCardProps) => {
+export const ProjectCard = ({ title, description, icon, image, technologies, delay = 0, projectId }: ProjectCardProps) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -47,9 +48,35 @@ export const ProjectCard = ({ title, description, icon, image, delay = 0, projec
           <CardTitle className="text-xl pr-20">{title}</CardTitle>
         </CardHeader>
         <CardContent>
-          <CardDescription className="text-base leading-relaxed">
+          <CardDescription className="text-base leading-relaxed mb-4">
             {description}
           </CardDescription>
+          {technologies && technologies.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {technologies.slice(0, 6).map((tech, index) => (
+                <div
+                  key={tech.name}
+                  className="w-8 h-8 rounded bg-background/50 p-1.5 flex items-center justify-center"
+                  title={tech.name}
+                >
+                  {tech.iconUrl ? (
+                    <img 
+                      src={tech.iconUrl} 
+                      alt={tech.name}
+                      className="w-full h-full object-contain"
+                    />
+                  ) : (
+                    <span className="text-xs">?</span>
+                  )}
+                </div>
+              ))}
+              {technologies.length > 6 && (
+                <div className="w-8 h-8 rounded bg-background/50 flex items-center justify-center text-xs text-muted-foreground">
+                  +{technologies.length - 6}
+                </div>
+              )}
+            </div>
+          )}
         </CardContent>
       </Card>
     </motion.div>

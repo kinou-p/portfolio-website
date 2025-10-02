@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ProjectCard } from "@/components/ProjectCard";
+import { projectsData } from "@/data/projects";
 import { Server, Gamepad2, Cloud, Terminal, Box, Globe, Scale } from "lucide-react";
 
 export const ProjectsSection = () => {
@@ -70,6 +71,7 @@ export const ProjectsSection = () => {
               description={t(`projects.items.${project.key}.description`)}
               icon={project.icon}
               image={project.image}
+              technologies={projectsData[project.key]?.technologies}
               delay={index * 0.1}
               projectId={project.key}
             />

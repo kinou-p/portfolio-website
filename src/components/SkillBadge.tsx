@@ -4,11 +4,12 @@ import { Badge } from "@/components/ui/badge";
 interface SkillBadgeProps {
   name: string;
   icon?: string;
+  iconUrl?: string;
   color?: string;
   delay?: number;
 }
 
-export const SkillBadge = ({ name, icon, color = "default", delay = 0 }: SkillBadgeProps) => {
+export const SkillBadge = ({ name, icon, iconUrl, color = "default", delay = 0 }: SkillBadgeProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
@@ -21,7 +22,11 @@ export const SkillBadge = ({ name, icon, color = "default", delay = 0 }: SkillBa
         variant="secondary"
         className="text-base py-2 px-4 font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
       >
-        {icon && <span className="mr-2">{icon}</span>}
+        {iconUrl ? (
+          <img src={iconUrl} alt={`${name} logo`} className="mr-2 w-5 h-5" />
+        ) : icon ? (
+          <span className="mr-2">{icon}</span>
+        ) : null}
         {name}
       </Badge>
     </motion.div>

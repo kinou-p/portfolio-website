@@ -3,21 +3,6 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// Plugin personnalisé pour optimiser le HTML
-const htmlOptimizationPlugin = () => ({
-  name: 'html-optimization',
-  transformIndexHtml(html: string) {
-    // Ajouter des hints de ressources critiques
-    return html.replace(
-      '</head>',
-      `  <!-- Resource Hints pour optimiser le chargement -->
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-</head>`
-    );
-  },
-});
-
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
@@ -31,11 +16,7 @@ export default defineConfig(({ mode }) => ({
       "0.0.0.0"
     ]
   },
-  plugins: [
-    react(), 
-    mode === "development" && componentTagger(),
-    mode === "production" && htmlOptimizationPlugin(),
-  ].filter(Boolean),
+  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -112,9 +93,5 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     // Minification supplémentaire
     reportCompressedSize: true,
-    // Optimiser le HTML généré
-    modulePreload: {
-      polyfill: false, // Pas de polyfill pour modulepreload (navigateurs modernes)
-    },
   },
 }));

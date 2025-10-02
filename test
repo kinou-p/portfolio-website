@@ -1,0 +1,82 @@
+Parfait 👌 je vois ton `docker-compose.yml` : là tu fais tourner ton **dev server Vite** dans un conteneur, ce qui explique tes 14s de LCP/FCP.
+En prod, il faut **builder une image optimisée**, puis la servir avec **Nginx** (ou Caddy) plutôt qu’avec `npm run dev`.
+
+---
+
+### ✅ Version corrigée pour la prod
+
+Voici un exemple de `docker-compose.yml` adapté :
+
+```yaml
+version: '3.8'
+
+services:
+  react_app:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: react_app
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.react_app.rule=Host(`alexandre-pommier.com`)"
+      - "traefik.http.routers.react_app.entrypoints=https"
+      - "traefik.http.routers.react_app.tls=true"
+      - "traefik.http.services.react_app.loadbalancer.server.port=80"
+
+    networks:
+      - react
+
+networks:
+  react:
+    external: true
+```
+
+Et tu ajoutes un **Dockerfile multi-stage** à la racine de ton projet :
+
+```dockerfile
+# Étape build
+FROM node:20 AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --frozen-lockfile
+COPY . .
+RUN npm run build
+
+# Étape serve (nginx)
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+---
+
+### ⚡️ Explication
+
+* **`npm run build`** → génère des fichiers statiques optimisés dans `/app/dist`.
+* **Nginx** → sert ces fichiers (beaucoup plus rapide que `vite dev`).
+* **Traefik** → envoie le trafic vers ton conteneur (port `80` interne, pas besoin de `8080`).
+* Tu peux ajouter un fichier `nginx.conf` custom si tu veux gérer le cache, gzip/brotli, etc.
+
+---
+
+### 🚀 Commandes
+
+1. Construis l’image :
+
+   ```bash
+   docker compose build
+   ```
+2. Lance-la :
+
+   ```bash
+   docker compose up -d
+   ```
+
+Ton site sera servi en **mode prod optimisé** avec un LCP/FCP qui devrait tomber à ~1–2 secondes 🎯
+
+---
+
+👉 Veux-tu que je t’ajoute aussi un **nginx.conf optimisé** (cache, compression, HTTP/2 push) pour booster encore plus les Core Web Vitals ?

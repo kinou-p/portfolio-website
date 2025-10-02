@@ -22,4 +22,29 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Optimisations pour la production
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Retire les console.log en production
+        drop_debugger: true,
+      },
+    },
+    // Chunking optimal pour de meilleures performances
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'ui-vendor': ['framer-motion', 'lucide-react'],
+          'particles': ['@tsparticles/react', '@tsparticles/slim'],
+          'radix-ui': Object.keys(require('./package.json').dependencies).filter(key => key.startsWith('@radix-ui')),
+        },
+      },
+    },
+    // Optimisation des assets
+    assetsInlineLimit: 4096, // Images < 4kb seront inline en base64
+    chunkSizeWarningLimit: 1000, // Augmenter la limite d'avertissement
+    sourcemap: false, // Désactiver les sourcemaps en production
+  },
 }));

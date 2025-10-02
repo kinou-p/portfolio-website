@@ -1,0 +1,29 @@
+services:
+  portfolio-website:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: portfolio-website
+    networks:
+      - portfolio
+    labels:
+      - "traefik.enable=true"
+      
+      # Configuration HTTPS
+      - "traefik.http.routers.portfolio-website.rule=Host(`alexandre-pommier.com`) || Host(`www.alexandre-pommier.com`)"
+      - "traefik.http.routers.portfolio-website.entrypoints=websecure"
+      - "traefik.http.routers.portfolio-website.tls=true"
+      - "traefik.http.routers.portfolio-website.tls.certresolver=letsencrypt"
+      - "traefik.http.services.portfolio-website.loadbalancer.server.port=80"
+      
+      # Redirection HTTP vers HTTPS
+      - "traefik.http.routers.portfolio-website-http.rule=Host(`alexandre-pommier.com`) || Host(`www.alexandre-pommier.com`)"
+      - "traefik.http.routers.portfolio-website-http.entrypoints=web"
+      - "traefik.http.routers.portfolio-website-http.middlewares=redirect-to-https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.permanent=true"
+
+networks:
+  portfolio:
+    external: true

@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ProjectPage from "./pages/ProjectPage";
@@ -13,6 +13,21 @@ const queryClient = new QueryClient();
 
 const IndexWrapper = () => <Index />;
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <IndexWrapper />,
+  },
+  {
+    path: "/project/:projectId",
+    element: <ProjectPage />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
+]);
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -20,14 +35,7 @@ const App = () => (
         <ParticlesBackground />
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<IndexWrapper />} />
-            <Route path="/project/:projectId" element={<ProjectPage />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
+        <RouterProvider router={router} />
       </ThemeProvider>
     </TooltipProvider>
   </QueryClientProvider>

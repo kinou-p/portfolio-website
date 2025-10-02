@@ -11,37 +11,37 @@ export const ProjectsSection = () => {
     {
       key: "avopieces",
       icon: <Scale className="w-6 h-6 text-primary" />,
-      image: "/images/sites/avopieces/mookup/3-devices-white (1).png",
+      image: "/images/sites/avopieces/mookup/3-devices-white (1).webp",
     },
     {
       key: "nas",
       icon: <Server className="w-6 h-6 text-primary" />,
-      image: "/images/projects/homemade_nas.png",
+      image: "/images/projects/homemade_nas.webp",
     },
     {
       key: "transcendence",
       icon: <Gamepad2 className="w-6 h-6 text-primary" />,
-      image: "/images/projects/pong.png",
+      image: "/images/projects/pong.webp",
     },
     {
       key: "cloud",
       icon: <Cloud className="w-6 h-6 text-primary" />,
-      image: "/images/projects/cloud_1.png",
+      image: "/images/projects/cloud_1.webp",
     },
     {
       key: "minishell",
       icon: <Terminal className="w-6 h-6 text-primary" />,
-      image: "/images/projects/minishell.png",
+      image: "/images/projects/minishell.webp",
     },
     {
       key: "etsidemain",
       icon: <Globe className="w-6 h-6 text-primary" />,
-      image: "/images/sites/etsidemain/mookup/3-devices-white.png",
+      image: "/images/sites/etsidemain/mookup/3-devices-white.webp",
     },
     {
       key: "cube3d",
       icon: <Box className="w-6 h-6 text-primary" />,
-      image: "/images/projects/cub3d.png",
+      image: "/images/projects/cub3d.webp",
     },
   ];
 

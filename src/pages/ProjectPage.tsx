@@ -103,9 +103,40 @@ const ProjectPageContent = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 {t("project.description") || "Description"}
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-12">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 {project.detailedDescription[language]}
               </p>
+              
+              {/* Liens intégrés dans la description */}
+              {(project.githubUrl || project.demoUrl) && (
+                <div className="flex flex-wrap gap-3 mb-12">
+                  {project.githubUrl && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      asChild
+                      className="gap-2"
+                    >
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4" />
+                        {t("project.viewGithub") || "View on GitHub"}
+                      </a>
+                    </Button>
+                  )}
+                  {project.demoUrl && (
+                    <Button
+                      size="sm"
+                      asChild
+                      className="gap-2"
+                    >
+                      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4" />
+                        {t("project.viewDemo") || "View Live Demo"}
+                      </a>
+                    </Button>
+                  )}
+                </div>
+              )}
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -198,54 +229,8 @@ const ProjectPageContent = () => {
         </section>
       )}
 
-      {/* Links Section */}
-      {(project.githubUrl || project.demoUrl) && (
-        <section className="py-20 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="max-w-4xl mx-auto text-center"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                {t("project.links") || "Project Links"}
-              </h2>
-              <div className="flex flex-wrap gap-4 justify-center">
-                {project.githubUrl && (
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    asChild
-                    className="gap-2"
-                  >
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="w-5 h-5" />
-                      {t("project.viewGithub") || "View on GitHub"}
-                    </a>
-                  </Button>
-                )}
-                {project.demoUrl && (
-                  <Button
-                    size="lg"
-                    asChild
-                    className="gap-2"
-                  >
-                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-5 h-5" />
-                      {t("project.viewDemo") || "View Live Demo"}
-                    </a>
-                  </Button>
-                )}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-      )}
-
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

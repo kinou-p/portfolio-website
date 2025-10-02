@@ -8,11 +8,16 @@ export const ParticlesBackground = () => {
   const { theme } = useTheme();
 
   useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
+    // Retarder l'initialisation des particules pour ne pas bloquer le premier rendu
+    const timer = setTimeout(() => {
+      initParticlesEngine(async (engine) => {
+        await loadSlim(engine);
+      }).then(() => {
+        setInit(true);
+      });
+    }, 1000); // Attendre 1 seconde après le chargement initial
+
+    return () => clearTimeout(timer);
   }, []);
 
   const particlesLoaded = async (container) => {
@@ -73,12 +78,12 @@ export const ParticlesBackground = () => {
             density: {
               enable: true,
             },
-            value: 70,
+            value: 70, // Réduit de 70 à 30 pour de meilleures performances
           },
           opacity: {
             value: { min: 0.1, max: theme === "dark" ? 0.5 : 0.6 },
             animation: {
-              enable: true,
+              enable: false, // Désactiver l'animation d'opacité pour meilleures performances
               speed: 3,
               sync: false,
             },
@@ -89,14 +94,14 @@ export const ParticlesBackground = () => {
           size: {
             value: { min: 0.1, max: 5 },
             animation: {
-              enable: true,
+              enable: false, // Désactiver l'animation de taille pour meilleures performances
               speed: 20,
               sync: false,
             },
           },
           twinkle: {
             lines: {
-              enable: true,
+              enable: false, // Désactiver le scintillement pour meilleures performances
               frequency: 0.005,
               opacity: 1,
               color: {
@@ -104,7 +109,7 @@ export const ParticlesBackground = () => {
               }
             },
             particles: {
-              enable: true,
+              enable: false, // Désactiver le scintillement pour meilleures performances
               frequency: 0.05,
               opacity: 1,
               color: {

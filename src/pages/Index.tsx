@@ -1,15 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { useLocation } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { CookieBanner } from "@/components/CookieBanner";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { ProjectsSection } from "@/components/sections/ProjectsSection";
-import { SkillsSection } from "@/components/sections/SkillsSection";
-import { ContactSection } from "@/components/sections/ContactSection";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { CookieBannerProvider } from "@/contexts/CookieBannerContext";
+
+// Lazy load des sections non critiques
+const ProjectsSection = lazy(() => import("@/components/sections/ProjectsSection").then(module => ({ default: module.ProjectsSection })));
+const SkillsSection = lazy(() => import("@/components/sections/SkillsSection").then(module => ({ default: module.SkillsSection })));
+const ContactSection = lazy(() => import("@/components/sections/ContactSection").then(module => ({ default: module.ContactSection })));
 
 const Index = () => {
   const location = useLocation();
@@ -34,9 +36,15 @@ const Index = () => {
           <Header />
           <main>
             <HeroSection />
-            <ProjectsSection />
-            <SkillsSection />
-            <ContactSection />
+            <Suspense fallback={<div className="py-20 md:py-32" />}>
+              <ProjectsSection />
+            </Suspense>
+            <Suspense fallback={<div className="py-20 md:py-32" />}>
+              <SkillsSection />
+            </Suspense>
+            <Suspense fallback={<div className="py-20 md:py-32" />}>
+              <ContactSection />
+            </Suspense>
           </main>
           <Footer />
           <CookieBanner />

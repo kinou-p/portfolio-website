@@ -8,39 +8,39 @@ export const ProjectsSection = () => {
 
   const projects = [
     {
+      key: "avopieces",
+      icon: <Scale className="w-6 h-6 text-primary" />,
+      image: "/images/sites/avopieces/mookup/3-devices-white (1).png",
+    },
+    {
       key: "nas",
       icon: <Server className="w-6 h-6 text-primary" />,
-      image: "/images/projects/nas.svg",
+      image: "/images/projects/homemade_nas.png",
     },
     {
       key: "transcendence",
       icon: <Gamepad2 className="w-6 h-6 text-primary" />,
-      image: "/images/projects/transcendence.svg",
+      image: "/images/projects/pong.png",
     },
     {
       key: "cloud",
       icon: <Cloud className="w-6 h-6 text-primary" />,
-      image: "/images/projects/cloud.svg",
+      image: "/images/projects/cloud_1.png",
     },
     {
       key: "minishell",
       icon: <Terminal className="w-6 h-6 text-primary" />,
-      image: "/images/projects/minishell.svg",
-    },
-    {
-      key: "cube3d",
-      icon: <Box className="w-6 h-6 text-primary" />,
-      image: "/images/projects/cube3d.svg",
+      image: "/images/projects/minishell.png",
     },
     {
       key: "etsidemain",
       icon: <Globe className="w-6 h-6 text-primary" />,
-      image: "/images/projects/etsidemain.svg",
+      image: "/images/sites/etsidemain/mookup/3-devices-white.png",
     },
     {
-      key: "avopieces",
-      icon: <Scale className="w-6 h-6 text-primary" />,
-      image: "/images/projects/avopieces.svg",
+      key: "cube3d",
+      icon: <Box className="w-6 h-6 text-primary" />,
+      image: "/images/projects/cub3d.png",
     },
   ];
 

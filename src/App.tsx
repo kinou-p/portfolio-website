@@ -9,6 +9,8 @@ import ProjectPage from "./pages/ProjectPage";
 
 const queryClient = new QueryClient();
 
+const IndexWrapper = () => <Index />;
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -16,7 +18,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<IndexWrapper />} />
           <Route path="/project/:projectId" element={<ProjectPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

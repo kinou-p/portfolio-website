@@ -8,6 +8,13 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: [
+      "alexandre-pommier.com",
+      "www.alexandre-pommier.com",
+      "localhost",
+      "127.0.0.1",
+      "0.0.0.0"
+    ]
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {

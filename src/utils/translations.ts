@@ -37,11 +37,11 @@ export const translations = {
           description: "Moteur RayCaster 3D inspiré de Wolfenstein 3D, développé avec MiniLibX et algorithmes graphiques avancés.",
         },
         etsidemain: {
-          title: "etsidemain.com",
+          title: "Site Et si demain...",
           description: "Site web vitrine pour cabinet de conseil en transformation régénérative. Design moderne et responsive avec animations CSS, formulaire de contact et optimisations SEO.",
         },
         avopieces: {
-          title: "avopieces.fr",
+          title: "Site Avo Pièces",
           description: "Plateforme juridique intelligente pour le cabinet AvoCab, spécialisée dans les procédures de divorce. Intègre un chatbot IA analysant les documents uploadés, système de gestion de comptes client/admin, prise de RDV en ligne et vitrine du cabinet.",
         },
       },
@@ -57,6 +57,15 @@ export const translations = {
       subtitle: "N'hésitez pas à me contacter",
       email: "Email",
       github: "GitHub",
+    },
+    footer: {
+      description: "Étudiant développeur à 42, passionné par les technologies web et systèmes. Créateur de solutions innovantes pour un avenir numérique.",
+      navigation: "Navigation",
+      information: "Informations",
+      legalNotice: "Mentions légales",
+      cookieManagement: "Gestion des cookies",
+      copyright: "Tous droits réservés.",
+      builtWith: "Construit avec",
     },
     project: {
       back: "Retour",
@@ -112,11 +121,11 @@ export const translations = {
           description: "3D RayCaster engine inspired by Wolfenstein 3D, developed with MiniLibX and advanced graphics algorithms.",
         },
         etsidemain: {
-          title: "etsidemain.com",
+          title: "Et si demain... Website",
           description: "Showcase website for regenerative transformation consulting firm. Modern responsive design with CSS animations, contact form and SEO optimizations.",
         },
         avopieces: {
-          title: "avopieces.fr",
+          title: "Avo Pieces Website",
           description: "Intelligent legal platform for AvoCab law firm, specialized in divorce procedures. Features AI chatbot analyzing uploaded documents, client/admin account management system, online appointment booking and law firm showcase.",
         },
       },
@@ -132,6 +141,15 @@ export const translations = {
       subtitle: "Feel free to reach out",
       email: "Email",
       github: "GitHub",
+    },
+    footer: {
+      description: "Developer student at 42, passionate about web technologies and systems. Creator of innovative solutions for a digital future.",
+      navigation: "Navigation",
+      information: "Information",
+      legalNotice: "Legal Notice",
+      cookieManagement: "Cookie Management",
+      copyright: "All rights reserved.",
+      builtWith: "Built with",
     },
     project: {
       back: "Back",

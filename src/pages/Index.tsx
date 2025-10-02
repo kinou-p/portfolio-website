@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ScrollProgress } from "@/components/ScrollProgress";
@@ -11,6 +13,20 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import { CookieBannerProvider } from "@/contexts/CookieBannerContext";
 
 const Index = () => {
+  const location = useLocation();
+
+  // Handle navigation with hash from project pages
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
+
   return (
     <ThemeProvider>
       <LanguageProvider>

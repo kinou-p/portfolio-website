@@ -22,12 +22,12 @@ export const Footer = () => {
   const footerLinks = [
     {
       icon: <FileText className="w-4 h-4" />,
-      label: "Mentions légales",
+      label: t("footer.legalNotice"),
       onClick: () => setShowLegalNotice(true)
     },
     {
       icon: <Cookie className="w-4 h-4" />,
-      label: "Gestion des cookies",
+      label: t("footer.cookieManagement"),
       onClick: reopenCookiePreferences
     }
   ];
@@ -48,21 +48,20 @@ export const Footer = () => {
   return (
     <footer className="bg-background/50 backdrop-blur-sm border-t border-border/50">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="flex flex-col md:flex-row justify-between gap-8 mb-8">
           {/* Colonne 1: Logo et description */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="space-y-4"
+            className="space-y-4 md:max-w-sm"
           >
             <div className="text-2xl font-bold text-gradient">
               Alexandre Pommier
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Étudiant développeur à 42, passionné par les technologies web et systèmes. 
-              Créateur de solutions innovantes pour un avenir numérique.
+              {t("footer.description")}
             </p>
             <div className="flex items-center gap-3">
               {socialLinks.map((link, index) => (
@@ -91,9 +90,9 @@ export const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="space-y-4"
+            className="space-y-4 md:max-w-xs"
           >
-            <h3 className="font-semibold text-lg">Navigation</h3>
+            <h3 className="font-semibold text-lg">{t("footer.navigation")}</h3>
             <nav className="space-y-2">
               {["home", "projects", "skills", "contact"].map((item) => (
                 <Button
@@ -120,9 +119,9 @@ export const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-4"
+            className="space-y-4 md:max-w-xs"
           >
-            <h3 className="font-semibold text-lg">Informations</h3>
+            <h3 className="font-semibold text-lg">{t("footer.information")}</h3>
             <nav className="space-y-2">
               {footerLinks.map((link, index) => (
                 <Button
@@ -151,11 +150,11 @@ export const Footer = () => {
           className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground"
         >
           <div className="text-center md:text-left">
-            © {currentYear} Alexandre Pommier. Tous droits réservés.
+            © {currentYear} Alexandre Pommier. {t("footer.copyright")}
           </div>
           <div className="flex items-center gap-4 text-xs">
             <div className="flex items-center gap-1">
-              Construit avec 
+              {t("footer.builtWith")} 
               <a 
                 href="https://reactjs.org" 
                 target="_blank" 

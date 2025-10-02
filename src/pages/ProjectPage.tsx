@@ -1,10 +1,12 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Github, ExternalLink, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { Header } from "@/components/Header";
 import { ImageGallery } from "@/components/ImageGallery";
 import { SkillBadge } from "@/components/SkillBadge";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -16,8 +18,14 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 const ProjectPageContent = () => {
   const { projectId } = useParams<{ projectId: string }>();
   const navigate = useNavigate();
+  const location = useLocation();
   const { language, t } = useLanguage();
   const { theme } = useTheme();
+
+  // Reset scroll position when projectId changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [projectId, location.pathname]);
 
   const project = projectId ? projectsData[projectId] : null;
 
@@ -38,19 +46,10 @@ const ProjectPageContent = () => {
   return (
     <div className="min-h-screen">
       <ScrollProgress />
+      <Header />
       
-      {/* Header */}
-      <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Button variant="ghost" onClick={() => navigate("/")} className="gap-2">
-            <ArrowLeft className="w-4 h-4" />
-            {t("project.back") || "Back"}
-          </Button>
-        </div>
-      </header>
-
       {/* Hero Section */}
-      <section className="py-20 md:py-32">
+      <section className="py-20 md:py-32 mt-16">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

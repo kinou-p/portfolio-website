@@ -3,10 +3,36 @@ import { Button } from "@/components/ui/button";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Check if we're on a project page
+  const isProjectPage = location.pathname.startsWith('/project/');
+
+  const handleNavigation = (section: string) => {
+    if (isProjectPage) {
+      // If on project page, navigate to home with section anchor
+      navigate(`/#${section}`);
+    } else {
+      // If on home page, scroll to section
+      scrollToSection(section);
+    }
+  };
+
+  const handleLogoClick = () => {
+    if (isProjectPage) {
+      // If on project page, navigate to home
+      navigate('/');
+    } else {
+      // If on home page, scroll to top
+      scrollToTop();
+    }
+  };
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -30,9 +56,9 @@ export const Header = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          onClick={scrollToTop}
+          onClick={handleLogoClick}
           className="text-2xl font-bold text-gradient hover:scale-105 transition-transform duration-200 cursor-pointer"
-          aria-label="Retour en haut de page"
+          aria-label={isProjectPage ? "Retour à l'accueil" : "Retour en haut de page"}
         >
           AP
         </motion.button>
@@ -44,7 +70,7 @@ export const Header = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * i }}
-              onClick={() => scrollToSection(item)}
+              onClick={() => handleNavigation(item)}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               {t(`nav.${item}`)}

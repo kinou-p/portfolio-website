@@ -59,8 +59,8 @@ export const projectsData: Record<string, ProjectData> = {
       fr: "Architecture microservices avec Docker Compose, reverse proxy Traefik automatisant les certificats Let's Encrypt, système de backup automatique avec rsync, et monitoring avec Prometheus.",
       en: "Microservices architecture with Docker Compose, Traefik reverse proxy automating Let's Encrypt certificates, automatic backup system with rsync, and monitoring with Prometheus.",
     },
-    mainImage: "/images/projects/nas.svg",
-    images: ["/images/projects/nas.svg"],
+    mainImage: "/images/projects/homemade_nas.png",
+    images: ["/images/projects/homemade_nas.png"],
     technologies: [
       { name: "OpenMediaVault" },
       { name: "Docker" },
@@ -113,8 +113,8 @@ export const projectsData: Record<string, ProjectData> = {
       fr: "Architecture MVC avec NestJS, WebSocket rooms pour les matchs, système de queuing Redis pour le matchmaking, JWT pour l'authentification, et Canvas HTML5 pour le rendu du jeu.",
       en: "MVC architecture with NestJS, WebSocket rooms for matches, Redis queuing system for matchmaking, JWT for authentication, and HTML5 Canvas for game rendering.",
     },
-    mainImage: "/images/projects/transcendence.svg",
-    images: ["/images/projects/transcendence.svg"],
+    mainImage: "/images/projects/pong.png",
+    images: ["/images/projects/pong.png"],
     technologies: [
       { name: "React", icon: "⚛️" },
       { name: "TypeScript" },
@@ -167,8 +167,8 @@ export const projectsData: Record<string, ProjectData> = {
       fr: "Docker Compose pour l'orchestration, Ansible playbooks pour l'automatisation, volumes Docker pour la persistance, et réseau bridge personnalisé pour l'isolation.",
       en: "Docker Compose for orchestration, Ansible playbooks for automation, Docker volumes for persistence, and custom bridge network for isolation.",
     },
-    mainImage: "/images/projects/cloud.svg",
-    images: ["/images/projects/cloud.svg"],
+    mainImage: "/images/projects/cloud_1.png",
+    images: ["/images/projects/cloud_1.png"],
     technologies: [
       { name: "Docker", icon: "🐳" },
       { name: "Ansible" },
@@ -220,8 +220,8 @@ export const projectsData: Record<string, ProjectData> = {
       fr: "Tokenizer/Lexer pour le parsing, AST pour représenter les commandes, gestion des descripteurs de fichiers pour les redirections, et table de hash pour les variables d'environnement.",
       en: "Tokenizer/Lexer for parsing, AST to represent commands, file descriptor management for redirections, and hash table for environment variables.",
     },
-    mainImage: "/images/projects/minishell.svg",
-    images: ["/images/projects/minishell.svg"],
+    mainImage: "/images/projects/minishell.png",
+    images: ["/images/projects/minishell.png"],
     technologies: [
       { name: "C" },
       { name: "Linux" },
@@ -272,8 +272,8 @@ export const projectsData: Record<string, ProjectData> = {
       fr: "Algorithme DDA pour le raycasting, lookup tables pour les calculs trigonométriques, buffer d'image pour le double buffering, et grille 2D pour la détection de collisions.",
       en: "DDA algorithm for raycasting, lookup tables for trigonometric calculations, image buffer for double buffering, and 2D grid for collision detection.",
     },
-    mainImage: "/images/projects/cube3d.svg",
-    images: ["/images/projects/cube3d.svg"],
+    mainImage: "/images/projects/cub3d.png",
+    images: ["/images/projects/cub3d.png"],
     technologies: [
       { name: "C" },
       { name: "MiniLibX" },
@@ -283,7 +283,7 @@ export const projectsData: Record<string, ProjectData> = {
   },
   etsidemain: {
     id: "etsidemain",
-    title: { fr: "etsidemain.com", en: "etsidemain.com" },
+    title: { fr: "Site Et si demain...", en: "Et si demain... Website" },
     shortDescription: {
       fr: "Site web vitrine pour cabinet de conseil en transformation régénérative. Design moderne et responsive avec animations CSS, formulaire de contact et optimisations SEO.",
       en: "Showcase website for regenerative transformation consulting firm. Modern responsive design with CSS animations, contact form and SEO optimizations.",
@@ -324,8 +324,17 @@ export const projectsData: Record<string, ProjectData> = {
       fr: "HTML5/CSS3 sémantique, animations avec transitions CSS et Intersection Observer, balises meta optimisées, structure de données JSON-LD, et optimisation des assets.",
       en: "Semantic HTML5/CSS3, animations with CSS transitions and Intersection Observer, optimized meta tags, JSON-LD data structure, and asset optimization.",
     },
-    mainImage: "/images/projects/etsidemain.svg",
-    images: ["/images/projects/etsidemain.svg"],
+    mainImage: "/images/sites/etsidemain/mookup/3-devices-white.png",
+    images: [
+      "/images/sites/etsidemain/mookup/3-devices-white.png",
+      "/images/sites/etsidemain/mookup/desktop.png",
+      "/images/sites/etsidemain/mookup/laptop.png",
+      "/images/sites/etsidemain/mookup/tablet-white.png",
+      "/images/sites/etsidemain/mookup/mobile-white.png",
+      "/images/sites/etsidemain/pc.png",
+      "/images/sites/etsidemain/tablette.png",
+      "/images/sites/etsidemain/tel.png"
+    ],
     technologies: [
       { name: "HTML5" },
       { name: "CSS3" },
@@ -336,7 +345,7 @@ export const projectsData: Record<string, ProjectData> = {
   },
   avopieces: {
     id: "avopieces",
-    title: { fr: "avopieces.fr", en: "avopieces.fr" },
+    title: { fr: "Site Avo Pièces", en: "Avo Pieces Website" },
     shortDescription: {
       fr: "Plateforme juridique intelligente pour le cabinet AvoCab, spécialisée dans les procédures de divorce. Intègre un chatbot IA analysant les documents uploadés, système de gestion de comptes client/admin, prise de RDV en ligne et vitrine du cabinet.",
       en: "Intelligent legal platform for AvoCab law firm, specialized in divorce procedures. Features AI chatbot analyzing uploaded documents, client/admin account management system, online appointment booking and law firm showcase.",
@@ -377,8 +386,17 @@ export const projectsData: Record<string, ProjectData> = {
       fr: "Architecture MERN stack, RAG (Retrieval Augmented Generation) pour le chatbot, chiffrement des données, système de roles et permissions, API RESTful, et design system cohérent.",
       en: "MERN stack architecture, RAG (Retrieval Augmented Generation) for chatbot, data encryption, roles and permissions system, RESTful API, and consistent design system.",
     },
-    mainImage: "/images/projects/avopieces.svg",
-    images: ["/images/projects/avopieces.svg"],
+    mainImage: "/images/sites/avopieces/mookup/3-devices-white (1).png",
+    images: [
+      "/images/sites/avopieces/mookup/3-devices-white (1).png",
+      "/images/sites/avopieces/mookup/desktop (1).png",
+      "/images/sites/avopieces/mookup/laptop (1).png",
+      "/images/sites/avopieces/mookup/tablet-white (1).png",
+      "/images/sites/avopieces/mookup/mobile-white (1).png",
+      "/images/sites/avopieces/pc.png",
+      "/images/sites/avopieces/tablette.png",
+      "/images/sites/avopieces/tel.png"
+    ],
     technologies: [
       { name: "React", icon: "⚛️" },
       { name: "Node.js", icon: "📗" },

@@ -1,0 +1,61 @@
+/* 
+  # Security Headers
+  
+  # Content Security Policy (CSP) - Protection contre XSS
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  
+  # HTTP Strict Transport Security (HSTS) - Force HTTPS
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  
+  # Cross-Origin-Opener-Policy (COOP) - Isolation de l'origine
+  Cross-Origin-Opener-Policy: same-origin
+  
+  # Cross-Origin-Resource-Policy (CORP)
+  Cross-Origin-Resource-Policy: same-origin
+  
+  # Cross-Origin-Embedder-Policy (COEP)
+  Cross-Origin-Embedder-Policy: require-corp
+  
+  # Protection contre le clickjacking
+  X-Frame-Options: DENY
+  
+  # Protection contre le MIME type sniffing
+  X-Content-Type-Options: nosniff
+  
+  # Protection XSS (legacy)
+  X-XSS-Protection: 1; mode=block
+  
+  # Referrer Policy - Contrôle des informations envoyées
+  Referrer-Policy: strict-origin-when-cross-origin
+  
+  # Permissions Policy - Contrôle des fonctionnalités du navigateur
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()
+  
+  # Cache Control
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/*
+  # Cache les assets statiques pendant 1 an
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  # Cache les images pendant 1 an
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.js
+  # Cache les fichiers JS pendant 1 an
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.css
+  # Cache les fichiers CSS pendant 1 an
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff
+  # Cache les polices pendant 1 an
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/*.woff2
+  # Cache les polices pendant 1 an
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *

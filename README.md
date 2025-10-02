@@ -130,7 +130,19 @@ Les traductions sont centralisées dans `src/utils/translations.ts`. Pour ajoute
 6. **etsidemain.com** - Site vitrine pour conseil en transformation régénérative
 7. **avopieces.fr** - Plateforme juridique IA pour procédures de divorce
 
-## 📱 Responsive Design
+## �️ Sécurité
+
+Ce portfolio implémente des pratiques de sécurité avancées pour protéger contre les vulnérabilités web courantes :
+
+- **Content Security Policy (CSP)** - Protection contre XSS
+- **HSTS** - Forçage HTTPS avec preload
+- **COOP/CORP/COEP** - Isolation cross-origin
+- **X-Frame-Options** - Protection contre le clickjacking
+- **Permissions Policy** - Contrôle des fonctionnalités du navigateur
+
+Pour plus de détails, consultez [SECURITY.md](./SECURITY.md).
+
+## �📱 Responsive Design
 
 Le portfolio est entièrement responsive avec des breakpoints optimisés :
 - Mobile : < 640px

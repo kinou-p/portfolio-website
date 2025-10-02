@@ -68,6 +68,7 @@ export const ImageGallery = ({ images, projectTitle }: ImageGalleryProps) => {
             size="icon"
             className="absolute top-4 right-4 text-foreground"
             onClick={closeLightbox}
+            aria-label="Fermer la galerie"
           >
             <X className="w-6 h-6" />
           </Button>
@@ -80,6 +81,7 @@ export const ImageGallery = ({ images, projectTitle }: ImageGalleryProps) => {
               e.stopPropagation();
               prevImage();
             }}
+            aria-label="Image précédente"
           >
             <ChevronLeft className="w-8 h-8" />
           </Button>
@@ -103,6 +105,7 @@ export const ImageGallery = ({ images, projectTitle }: ImageGalleryProps) => {
               e.stopPropagation();
               nextImage();
             }}
+            aria-label="Image suivante"
           >
             <ChevronRight className="w-8 h-8" />
           </Button>

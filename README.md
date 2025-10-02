@@ -1,73 +1,154 @@
-# Welcome to your Lovable project
+# 🌟 Portfolio d'Alexandre Pommier
 
-## Project info
+Un portfolio moderne et interactif développé avec React, TypeScript et shadcn/ui, présentant mes projets et compétences techniques.
 
-**URL**: https://lovable.dev/projects/003c0e71-7f40-4eff-96a9-a798b4b69b0d
+## 🚀 Aperçu
 
-## How can I edit this code?
+Ce portfolio présente mon parcours d'étudiant à 42 en informatique, avec une sélection de mes projets techniques les plus significatifs. Il intègre des animations fluides, un design responsive et un support multilingue (français/anglais).
 
-There are several ways of editing your application.
+### ✨ Fonctionnalités
 
-**Use Lovable**
+- **🌙 Mode sombre/clair** - Changement de thème avec persistance
+- **🌍 Multilingue** - Support français et anglais
+- **📱 Responsive** - Optimisé pour tous les appareils
+- **🎨 Animations** - Interactions fluides avec Framer Motion
+- **🎯 Navigation intuitive** - Barre de progression et navigation smooth
+- **⚡ Performance** - Construit avec Vite pour des temps de chargement optimaux
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/003c0e71-7f40-4eff-96a9-a798b4b69b0d) and start prompting.
+## 🛠️ Technologies utilisées
 
-Changes made via Lovable will be committed automatically to this repo.
+### Frontend
+- **React 18** - Interface utilisateur moderne
+- **TypeScript** - Typage statique pour une meilleure robustesse
+- **Vite** - Build tool rapide et moderne
+- **Tailwind CSS** - Framework CSS utilitaire
+- **shadcn/ui** - Composants UI élégants et accessibles
 
-**Use your preferred IDE**
+### Librairies & Outils
+- **Framer Motion** - Animations et transitions
+- **React Router** - Navigation côté client
+- **Lucide React** - Icônes modernes
+- **React Query** - Gestion d'état et cache
+- **React Hook Form** - Gestion des formulaires
+- **next-themes** - Gestion des thèmes
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Développement
+- **ESLint** - Linting et qualité du code
+- **PostCSS** - Traitement CSS
+- **Bun** - Gestionnaire de paquets rapide
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📁 Structure du projet
 
-Follow these steps:
+```
+pommier-portfolio/
+├── public/                 # Assets statiques
+├── src/
+│   ├── components/        # Composants réutilisables
+│   │   ├── sections/     # Sections principales du portfolio
+│   │   └── ui/           # Composants UI (shadcn/ui)
+│   ├── contexts/         # Contextes React (Theme, Language)
+│   ├── hooks/            # Hooks personnalisés
+│   ├── lib/              # Utilitaires et configurations
+│   ├── pages/            # Pages de l'application
+│   └── utils/            # Fonctions utilitaires et traductions
+├── package.json
+└── README.md
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🚀 Installation et lancement
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Prérequis
+- Node.js (version 18 ou supérieure)
+- Bun (recommandé) ou npm/yarn
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Installation
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+# Cloner le repository
+git clone https://github.com/kinou-p/pommier-portfolio.git
+cd pommier-portfolio
+
+# Installer les dépendances avec Bun
+bun install
+
+# Ou avec npm
+npm install
+```
+
+### Développement
+
+```bash
+# Lancer le serveur de développement
+bun dev
+
+# Ou avec npm
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+L'application sera accessible sur `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build pour la production
 
-**Use GitHub Codespaces**
+```bash
+# Build de production
+bun run build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Prévisualiser le build
+bun run preview
+```
 
-## What technologies are used for this project?
+## 📋 Scripts disponibles
 
-This project is built with:
+- `bun dev` - Lance le serveur de développement
+- `bun build` - Build de production
+- `bun build:dev` - Build en mode développement
+- `bun lint` - Vérification du code avec ESLint
+- `bun preview` - Prévisualisation du build de production
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🎨 Personnalisation
 
-## How can I deploy this project?
+### Thèmes
+Le portfolio utilise CSS variables pour les couleurs, configurées dans `src/index.css`. Les thèmes sont gérés par `next-themes`.
 
-Simply open [Lovable](https://lovable.dev/projects/003c0e71-7f40-4eff-96a9-a798b4b69b0d) and click on Share -> Publish.
+### Traductions
+Les traductions sont centralisées dans `src/utils/translations.ts`. Pour ajouter une nouvelle langue :
+1. Ajouter les traductions dans l'objet `translations`
+2. Mettre à jour le contexte de langue si nécessaire
 
-## Can I connect a custom domain to my Lovable project?
+### Contenu
+- **Projets** : Modifiez `src/components/sections/ProjectsSection.tsx`
+- **Compétences** : Modifiez `src/components/sections/SkillsSection.tsx`
+- **Contact** : Modifiez `src/components/sections/ContactSection.tsx`
 
-Yes, you can!
+## 🌟 Projets présentés
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. **Homemade NAS** - Infrastructure personnelle complète
+2. **Ft_Transcendence** - Application web Pong en temps réel
+3. **Cloud-1** - Infrastructure automatisée avec Docker/Ansible
+4. **Minishell** - Réimplémentation d'un shell bash en C
+5. **Cube3D** - Moteur 3D RayCaster
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📱 Responsive Design
+
+Le portfolio est entièrement responsive avec des breakpoints optimisés :
+- Mobile : < 640px
+- Tablet : 640px - 1024px
+- Desktop : > 1024px
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou proposer une pull request.
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+
+## 📞 Contact
+
+**Alexandre Pommier**
+- 📧 Email : [alexandre.pommier@example.com](mailto:alexandre.pommier@example.com)
+- 💼 GitHub : [@kinou-p](https://github.com/kinou-p)
+
+---
+
+*Développé avec ❤️ par Alexandre Pommier*

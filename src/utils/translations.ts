@@ -36,6 +36,14 @@ export const translations = {
           title: "Cube3D",
           description: "Moteur RayCaster 3D inspiré de Wolfenstein 3D, développé avec MiniLibX et algorithmes graphiques avancés.",
         },
+        etsidemain: {
+          title: "etsidemain.com",
+          description: "Site web vitrine pour cabinet de conseil en transformation régénérative. Design moderne et responsive avec animations CSS, formulaire de contact et optimisations SEO.",
+        },
+        avopieces: {
+          title: "avopieces.fr",
+          description: "Plateforme juridique intelligente pour le cabinet AvoCab, spécialisée dans les procédures de divorce. Intègre un chatbot IA analysant les documents uploadés, système de gestion de comptes client/admin, prise de RDV en ligne et vitrine du cabinet.",
+        },
       },
     },
     skills: {
@@ -47,7 +55,6 @@ export const translations = {
     contact: {
       title: "Contact",
       subtitle: "N'hésitez pas à me contacter",
-      phone: "Téléphone",
       email: "Email",
       github: "GitHub",
     },
@@ -89,6 +96,14 @@ export const translations = {
           title: "Cube3D",
           description: "3D RayCaster engine inspired by Wolfenstein 3D, developed with MiniLibX and advanced graphics algorithms.",
         },
+        etsidemain: {
+          title: "etsidemain.com",
+          description: "Showcase website for regenerative transformation consulting firm. Modern responsive design with CSS animations, contact form and SEO optimizations.",
+        },
+        avopieces: {
+          title: "avopieces.fr",
+          description: "Intelligent legal platform for AvoCab law firm, specialized in divorce procedures. Features AI chatbot analyzing uploaded documents, client/admin account management system, online appointment booking and law firm showcase.",
+        },
       },
     },
     skills: {
@@ -100,7 +115,6 @@ export const translations = {
     contact: {
       title: "Contact",
       subtitle: "Feel free to reach out",
-      phone: "Phone",
       email: "Email",
       github: "GitHub",
     },

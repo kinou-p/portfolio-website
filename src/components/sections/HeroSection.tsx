@@ -70,12 +70,15 @@ export const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.8 }}
             className="pt-16"
           >
-            <motion.div
+            <motion.button
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
+              onClick={() => scrollToSection("projects")}
+              className="p-2 rounded-full hover:bg-primary/10 transition-colors duration-200 cursor-pointer"
+              aria-label="Scroll to projects"
             >
-              <ArrowDown className="h-6 w-6 mx-auto text-muted-foreground" />
-            </motion.div>
+              <ArrowDown className="h-8 w-8 mx-auto text-muted-foreground hover:text-primary transition-colors duration-200" />
+            </motion.button>
           </motion.div>
         </div>
       </div>

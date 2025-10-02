@@ -127,6 +127,8 @@ Les traductions sont centralisées dans `src/utils/translations.ts`. Pour ajoute
 3. **Cloud-1** - Infrastructure automatisée avec Docker/Ansible
 4. **Minishell** - Réimplémentation d'un shell bash en C
 5. **Cube3D** - Moteur 3D RayCaster
+6. **etsidemain.com** - Site vitrine pour conseil en transformation régénérative
+7. **avopieces.fr** - Plateforme juridique IA pour procédures de divorce
 
 ## 📱 Responsive Design
 

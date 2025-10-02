@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ProjectCard } from "@/components/ProjectCard";
-import { Server, Gamepad2, Cloud, Terminal, Box } from "lucide-react";
+import { Server, Gamepad2, Cloud, Terminal, Box, Globe, Scale } from "lucide-react";
 
 export const ProjectsSection = () => {
   const { t } = useLanguage();
@@ -10,22 +10,37 @@ export const ProjectsSection = () => {
     {
       key: "nas",
       icon: <Server className="w-6 h-6 text-primary" />,
+      image: "/images/projects/nas.svg",
     },
     {
       key: "transcendence",
       icon: <Gamepad2 className="w-6 h-6 text-primary" />,
+      image: "/images/projects/transcendence.svg",
     },
     {
       key: "cloud",
       icon: <Cloud className="w-6 h-6 text-primary" />,
+      image: "/images/projects/cloud.svg",
     },
     {
       key: "minishell",
       icon: <Terminal className="w-6 h-6 text-primary" />,
+      image: "/images/projects/minishell.svg",
     },
     {
       key: "cube3d",
       icon: <Box className="w-6 h-6 text-primary" />,
+      image: "/images/projects/cube3d.svg",
+    },
+    {
+      key: "etsidemain",
+      icon: <Globe className="w-6 h-6 text-primary" />,
+      image: "/images/projects/etsidemain.svg",
+    },
+    {
+      key: "avopieces",
+      icon: <Scale className="w-6 h-6 text-primary" />,
+      image: "/images/projects/avopieces.svg",
     },
   ];
 
@@ -54,6 +69,7 @@ export const ProjectsSection = () => {
               title={t(`projects.items.${project.key}.title`)}
               description={t(`projects.items.${project.key}.description`)}
               icon={project.icon}
+              image={project.image}
               delay={index * 0.1}
             />
           ))}

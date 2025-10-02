@@ -24,13 +24,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     // Optimisations pour la production
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true, // Retire les console.log en production
-        drop_debugger: true,
-      },
-    },
+    minify: 'esbuild', // Utiliser esbuild au lieu de terser (plus rapide, déjà inclus)
     // Chunking optimal pour de meilleures performances
     rollupOptions: {
       output: {
@@ -38,7 +32,27 @@ export default defineConfig(({ mode }) => ({
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'ui-vendor': ['framer-motion', 'lucide-react'],
           'particles': ['@tsparticles/react', '@tsparticles/slim'],
-          'radix-ui': Object.keys(require('./package.json').dependencies).filter(key => key.startsWith('@radix-ui')),
+          'radix-ui': [
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-alert-dialog',
+            '@radix-ui/react-avatar',
+            '@radix-ui/react-checkbox',
+            '@radix-ui/react-collapsible',
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-label',
+            '@radix-ui/react-popover',
+            '@radix-ui/react-progress',
+            '@radix-ui/react-scroll-area',
+            '@radix-ui/react-select',
+            '@radix-ui/react-separator',
+            '@radix-ui/react-slider',
+            '@radix-ui/react-slot',
+            '@radix-ui/react-switch',
+            '@radix-ui/react-tabs',
+            '@radix-ui/react-toast',
+            '@radix-ui/react-tooltip',
+          ],
         },
       },
     },

@@ -11,6 +11,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "optimize-images": "node scripts/optimize-images.js",
+    "create-thumbnails": "node scripts/create-thumbnails.js",
     "analyze": "node scripts/analyze-bundle.js"
   },
   "dependencies": {

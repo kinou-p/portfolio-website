@@ -28,22 +28,22 @@ export const ProjectCard = ({ title, description, icon, image, technologies, del
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      whileHover={{ y: -5 }}
+      whileHover={{ y: -5, transition: { duration: 0.2 } }}
       onClick={handleClick}
       className={projectId ? "cursor-pointer" : ""}
     >
-      <Card className="h-full hover:shadow-lg transition-all duration-300 border-border/50 bg-card/50 backdrop-blur relative overflow-hidden group">
+      <Card className="h-full hover:shadow-lg transition-all duration-200 border-border/50 bg-card/50 backdrop-blur relative overflow-hidden group">
         {/* Indicateur cliquable en bas à droite */}
         {projectId && (
-          <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-            <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-0.5 transition-transform duration-300" />
+          <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-all duration-200 group-hover:scale-110">
+            <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-0.5 transition-transform duration-200" />
           </div>
         )}
         
         {image && (
           <div className="absolute top-4 right-4 w-16 h-16 rounded-lg overflow-hidden border-2 border-background/20 shadow-lg">
             <img 
-              src={image}   
+              src={image.replace('.webp', '_thumb.webp')}   
               alt={`${title} preview`}
               className="w-full h-full object-cover"
             />

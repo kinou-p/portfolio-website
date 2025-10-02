@@ -6,10 +6,13 @@ npm-debug.log
 .env.local
 .env*.local
 dist
-README.md
 .vscode
 .idea
-*.md
 .DS_Store
 *.log
 test
+
+# Documentation (optionnel, mais garde les fichiers de config)
+README.md
+PORTAINER_*.md
+SECURITY_GUIDE.md

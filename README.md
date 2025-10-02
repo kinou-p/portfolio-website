@@ -1,32 +1,6 @@
 # 🌟 Portfolio d'Alexandre Pommier
 
-Un portfolio moderne et interactif développé avec React, TypeScript et shadcn/ui, présentant m## 🛡️ Sécurité
-
-Ce portfolio implémente des pratiques de sécurité avancées pour protéger contre les vulnérabilités web courantes :
-
-- **Content Security Policy (CSP)** - Protection contre XSS
-- **HSTS** - Forçage HTTPS avec preload
-- **COOP/CORP/COEP** - Isolation cross-origin
-- **X-Frame-Options** - Protection contre le clickjacking
-- **Permissions Policy** - Contrôle des fonctionnalités du navigateur
-
-Pour plus de détails, consultez [SECURITY.md](./SECURITY.md).
-
-## ⚡ Performance
-
-Optimisations avancées pour des Core Web Vitals excellents :
-
-- **CSS Critique Inliné** - Élimination du blocage de rendu
-- **Lazy Loading** - Chargement à la demande des composants et images
-- **Code Splitting** - Bundles optimisés et chunking intelligent
-- **Resource Hints** - Preconnect et DNS prefetch
-- **Image Optimization** - WebP avec thumbnails générés automatiquement
-
-**Scores Lighthouse cibles** : Performance 95+, Accessibilité 95+, Best Practices 95+, SEO 100
-
-Pour plus de détails, consultez [PERFORMANCE.md](./PERFORMANCE.md).
-
-## 📱 Responsive Design compétences techniques.
+Un portfolio moderne et interactif développé avec React, TypeScript et shadcn/ui, présentant mes projets et compétences techniques.
 
 ## 🚀 Aperçu
 

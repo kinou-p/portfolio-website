@@ -26,16 +26,7 @@
     <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-    <!-- Critical CSS inliné pour éviter le blocage du rendu -->
-    <style>
-      :root{--background:0 0% 100%;--foreground:222 47% 11%;--primary:217 91% 60%;--border:214 32% 91%}.dark{--background:0 0% 4%;--foreground:0 0% 98%;--primary:217 91% 60%;--border:0 0% 15%}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background-color:hsl(var(--background));color:hsl(var(--foreground));font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}#root{min-height:100vh}.wf-loading body{visibility:hidden}.loading-skeleton{background:linear-gradient(90deg,hsl(var(--background)) 25%,hsl(var(--border)) 50%,hsl(var(--background)) 75%);background-size:200% 100%;animation:loading 1.5s ease-in-out infinite}@keyframes loading{0%{background-position:200% 0}100%{background-position:-200% 0}}
-    </style>
-
-    <!-- Preload critical fonts -->
-    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2" crossorigin>
-
-    <!-- Google Fonts - Chargement asynchrone pour ne pas bloquer le rendu -->
+    <!-- Google Fonts - Optimisé avec display=swap -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript>

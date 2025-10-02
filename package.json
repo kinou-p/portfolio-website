@@ -12,8 +12,7 @@
     "preview": "vite preview",
     "optimize-images": "node scripts/optimize-images.js",
     "create-thumbnails": "node scripts/create-thumbnails.js",
-    "analyze": "node scripts/analyze-bundle.js",
-    "extract-critical-css": "npm run build && node scripts/extract-critical-css.js"
+    "analyze": "node scripts/analyze-bundle.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

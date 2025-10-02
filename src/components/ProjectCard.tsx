@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -31,11 +32,18 @@ export const ProjectCard = ({ title, description, icon, image, technologies, del
       onClick={handleClick}
       className={projectId ? "cursor-pointer" : ""}
     >
-      <Card className="h-full hover:shadow-lg transition-all duration-300 border-border/50 bg-card/50 backdrop-blur relative overflow-hidden">
+      <Card className="h-full hover:shadow-lg transition-all duration-300 border-border/50 bg-card/50 backdrop-blur relative overflow-hidden group">
+        {/* Indicateur cliquable en bas à droite */}
+        {projectId && (
+          <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+            <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-0.5 transition-transform duration-300" />
+          </div>
+        )}
+        
         {image && (
           <div className="absolute top-4 right-4 w-16 h-16 rounded-lg overflow-hidden border-2 border-background/20 shadow-lg">
             <img 
-              src={image} 
+              src={image}   
               alt={`${title} preview`}
               className="w-full h-full object-cover"
             />
@@ -56,7 +64,7 @@ export const ProjectCard = ({ title, description, icon, image, technologies, del
               {technologies.slice(0, 6).map((tech, index) => (
                 <div
                   key={tech.name}
-                  className="w-8 h-8 rounded bg-background/50 p-1.5 flex items-center justify-center"
+                  className="w-10 h-10 rounded bg-background/50 p-2 flex items-center justify-center"
                   title={tech.name}
                 >
                   {tech.iconUrl ? (
@@ -71,7 +79,7 @@ export const ProjectCard = ({ title, description, icon, image, technologies, del
                 </div>
               ))}
               {technologies.length > 6 && (
-                <div className="w-8 h-8 rounded bg-background/50 flex items-center justify-center text-xs text-muted-foreground">
+                <div className="w-10 h-10 rounded bg-background/50 flex items-center justify-center text-xs text-muted-foreground">
                   +{technologies.length - 6}
                 </div>
               )}

@@ -113,7 +113,7 @@ export const translations = {
     },
     hero: {
       title: "Alexandre Pommier",
-      subtitle: "Student majoring in computer science at 42, I am seeking employment to complement my academic training with meaningful professional experience. I am open to various job opportunities related to my studies and am ready to discuss my background further during an interview.",
+      subtitle: "Computer science student at 42 school, I develop my technical skills through innovative and challenging projects. Passionate about modern technologies, I am particularly interested in web development, systems and infrastructure.",
       cta1: "View my projects",
       cta2: "Contact me",
     },

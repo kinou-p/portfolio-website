@@ -23,7 +23,11 @@ export const SkillBadge = ({ name, icon, iconUrl, color = "default", delay = 0 }
         className="text-base py-2 px-4 font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
       >
         {iconUrl ? (
-          <img src={iconUrl} alt={`${name} logo`} className="mr-2 w-5 h-5" />
+          <img 
+            src={iconUrl} 
+            alt={`${name} logo`} 
+            className={`mr-2 w-5 h-5 ${name === 'Traefik' || name === 'WebSocket' || name === 'MiniLibX' ? 'bg-white rounded' : ''}`} 
+          />
         ) : icon ? (
           <span className="mr-2">{icon}</span>
         ) : null}

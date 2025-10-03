@@ -100,9 +100,10 @@ export const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * i }}
               onClick={() => handleNavigation(item)}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group"
             >
               {t(`nav.${item}`)}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
             </motion.button>
           ))}
         </nav>
@@ -179,9 +180,10 @@ export const Header = () => {
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ delay: 0.1 * i }}
                   onClick={() => handleNavigation(item)}
-                  className="text-left text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                  className="relative text-left text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-2 group"
                 >
                   {t(`nav.${item}`)}
+                  <span className="absolute bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
                 </motion.button>
               ))}
             </div>

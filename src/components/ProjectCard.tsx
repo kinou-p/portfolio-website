@@ -71,7 +71,7 @@ export const ProjectCard = ({ title, description, icon, image, technologies, del
                     <img 
                       src={tech.iconUrl} 
                       alt={tech.name}
-                      className="w-full h-full object-contain"
+                      className={`w-full h-full object-contain ${tech.name === 'Traefik' || tech.name === 'WebSocket' || tech.name === 'MiniLibX' ? 'bg-white rounded' : ''}`}
                     />
                   ) : (
                     <span className="text-xs">?</span>

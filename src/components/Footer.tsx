@@ -11,7 +11,6 @@ export const Footer = () => {
   const { t } = useLanguage();
   const { showBanner } = useCookieBanner();
   const [showLegalNotice, setShowLegalNotice] = useState(false);
-  const [showCVPopup, setShowCVPopup] = useState(false);
 
   const reopenCookiePreferences = () => {
     // Simplement rouvrir la bannière sans recharger
@@ -20,11 +19,20 @@ export const Footer = () => {
 
   const currentYear = new Date().getFullYear();
 
+  const downloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/cv.pdf';
+    link.download = 'Alexandre_Pommier_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const footerLinks = [
     {
       icon: <Download className="w-4 h-4" />,
       label: t("footer.downloadCV"),
-      onClick: () => setShowCVPopup(true)
+      onClick: downloadCV
     },
     {
       icon: <FileText className="w-4 h-4" />,
@@ -185,21 +193,6 @@ export const Footer = () => {
         isOpen={showLegalNotice}
         onClose={() => setShowLegalNotice(false)}
       />
-
-      {/* Popup CV en travaux */}
-      {showCVPopup && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => setShowCVPopup(false)}>
-          <div className="bg-background p-6 rounded-lg shadow-lg max-w-sm mx-4" onClick={(e) => e.stopPropagation()}>
-            <h3 className="text-lg font-semibold mb-2">{t("footer.cvWorkInProgressTitle")}</h3>
-            <p className="text-muted-foreground mb-4">
-              {t("footer.cvWorkInProgress")}
-            </p>
-            <Button onClick={() => setShowCVPopup(false)} className="w-full">
-              {t("footer.understood")}
-            </Button>
-          </div>
-        </div>
-      )}
     </footer>
   );
 };

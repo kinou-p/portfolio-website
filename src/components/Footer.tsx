@@ -5,12 +5,13 @@ import { useCookieBanner } from "@/contexts/CookieBannerContext";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { LegalNoticeModal } from "@/components/LegalNoticeModal";
-import { Github, Mail, ExternalLink, Cookie, FileText } from "lucide-react";
+import { Github, Mail, ExternalLink, Cookie, FileText, Download } from "lucide-react";
 
 export const Footer = () => {
   const { t } = useLanguage();
   const { showBanner } = useCookieBanner();
   const [showLegalNotice, setShowLegalNotice] = useState(false);
+  const [showCVPopup, setShowCVPopup] = useState(false);
 
   const reopenCookiePreferences = () => {
     // Simplement rouvrir la bannière sans recharger
@@ -20,6 +21,11 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
+    {
+      icon: <Download className="w-4 h-4" />,
+      label: t("footer.downloadCV"),
+      onClick: () => setShowCVPopup(true)
+    },
     {
       icon: <FileText className="w-4 h-4" />,
       label: t("footer.legalNotice"),
@@ -35,12 +41,12 @@ export const Footer = () => {
   const socialLinks = [
     {
       icon: <Github className="w-5 h-5" />,
-      label: "GitHub",
+      label: t("footer.github"),
       href: "https://github.com/kinou-p"
     },
     {
       icon: <Mail className="w-5 h-5" />,
-      label: "Email",
+      label: t("footer.email"),
       href: "mailto:contact@apommier.com"
     }
   ];
@@ -125,7 +131,7 @@ export const Footer = () => {
             className="space-y-4 md:max-w-xs"
           >
             <h3 className="font-semibold text-lg">{t("footer.information")}</h3>
-            <nav className="space-y-2">
+            <nav className="flex flex-col space-y-2">
               {footerLinks.map((link, index) => (
                 <Button
                   key={link.label}
@@ -179,6 +185,21 @@ export const Footer = () => {
         isOpen={showLegalNotice}
         onClose={() => setShowLegalNotice(false)}
       />
+
+      {/* Popup CV en travaux */}
+      {showCVPopup && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => setShowCVPopup(false)}>
+          <div className="bg-background p-6 rounded-lg shadow-lg max-w-sm mx-4" onClick={(e) => e.stopPropagation()}>
+            <h3 className="text-lg font-semibold mb-2">{t("footer.cvWorkInProgressTitle")}</h3>
+            <p className="text-muted-foreground mb-4">
+              {t("footer.cvWorkInProgress")}
+            </p>
+            <Button onClick={() => setShowCVPopup(false)} className="w-full">
+              {t("footer.understood")}
+            </Button>
+          </div>
+        </div>
+      )}
     </footer>
   );
 };

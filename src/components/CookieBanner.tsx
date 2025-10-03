@@ -57,9 +57,9 @@ export const CookieBanner = () => {
                   <Cookie className="w-5 h-5 text-primary" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-base mb-1">Cookies</h3>
+                  <h3 className="font-semibold text-base mb-1">{t("cookies.title")}</h3>
                   <p className="text-sm text-muted-foreground">
-                    Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic.
+                    {t("cookies.description")}
                   </p>
                 </div>
               </div>
@@ -71,7 +71,7 @@ export const CookieBanner = () => {
                   onClick={acceptAllCookies}
                   className="flex-1"
                 >
-                  Accepter
+                  {t("cookies.accept")}
                 </Button>
                 <Button
                   variant="outline"
@@ -79,7 +79,7 @@ export const CookieBanner = () => {
                   onClick={rejectAll}
                   className="flex-1"
                 >
-                  Refuser
+                  {t("cookies.reject")}
                 </Button>
               </div>
             </div>

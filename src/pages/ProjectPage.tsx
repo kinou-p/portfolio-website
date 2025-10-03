@@ -32,10 +32,10 @@ const ProjectPageContent = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">{t("project.notFound") || "Project not found"}</h1>
+          <h1 className="text-4xl font-bold mb-4">{t("project.notFound")}</h1>
           <Button onClick={() => navigate("/")}>
             <ArrowLeft className="w-4 h-4 mr-2" />
-            {t("project.backToHome") || "Back to Home"}
+            {t("project.backToHome")}
           </Button>
         </div>
       </div>
@@ -43,7 +43,7 @@ const ProjectPageContent = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-y-hidden">
       <ScrollProgress />
       <Header />
       
@@ -56,7 +56,7 @@ const ProjectPageContent = () => {
             transition={{ duration: 0.5 }}
             className="max-w-4xl mx-auto text-center mb-12"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6">
               {project.title[language]}
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8">
@@ -261,7 +261,7 @@ const ProjectPageContent = () => {
                 className="gap-2"
               >
                 <ArrowLeft className="w-5 h-5" />
-                {t("project.backToHome") || "Back to Home"}
+                {t("project.backToHome")}
               </Button>
             </div>
           </motion.div>

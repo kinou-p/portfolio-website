@@ -85,10 +85,14 @@ export const Header = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
           onClick={handleLogoClick}
-          className="text-2xl font-bold text-gradient hover:scale-105 transition-transform duration-200 cursor-pointer"
+          className="hover:scale-105 transition-transform duration-200 cursor-pointer"
           aria-label={isProjectPage ? "Retour à l'accueil" : "Retour en haut de page"}
         >
-          AP
+          <img
+            src={theme === "dark" ? "/images/logo_white.png" : "/images/logo_black.png"}
+            alt="Alexandre Pommier Logo"
+            className="h-10 w-auto"
+          />
         </motion.button>
 
         {/* Desktop Navigation */}

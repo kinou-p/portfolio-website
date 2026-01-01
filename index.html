@@ -1,59 +1,71 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- DNS Prefetch & Preconnect pour les domaines tiers -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    
-    <title>Alexandre Pommier - Portfolio</title>
-    <meta name="description" content="Alexandre Pommier, étudiant en informatique à 42, développeur passionné par les technologies web et systèmes." />
-    <meta name="author" content="Alexandre Pommier" />
 
-    <meta property="og:title" content="Alexandre Pommier - Portfolio" />
-    <meta property="og:description" content="Portfolio d'Alexandre Pommier, étudiant développeur à l'école 42" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/preview.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <!-- <meta name="twitter:site" content="@lovable_dev" /> -->
-    <meta name="twitter:image" content="/preview.png" />
+  <!-- DNS Prefetch & Preconnect pour les domaines tiers -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Google Fonts - Optimisé avec display=swap -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    </noscript>
+  <link rel="icon" href="/images/logo_white.png" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="/images/logo_black.png" media="(prefers-color-scheme: light)" />
 
-    <!-- Google Tag Manager - Chargé de manière asynchrone -->
-    <script>
-      // Defer GTM loading to improve initial page load
-      window.addEventListener('load', function() {
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-5V6TCG4C');
-      });
-    </script>
-    <!-- End Google Tag Manager -->
-  </head>
+  <title>Alexandre Pommier - Portfolio</title>
+  <meta name="description"
+    content="Alexandre Pommier, étudiant en informatique à 42, développeur passionné par les technologies web et systèmes." />
+  <meta name="author" content="Alexandre Pommier" />
 
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5V6TCG4C"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <meta property="og:title" content="Alexandre Pommier - Portfolio" />
+  <meta property="og:description" content="Portfolio d'Alexandre Pommier, étudiant développeur à l'école 42" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/preview.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- <meta name="twitter:site" content="@lovable_dev" /> -->
+  <meta name="twitter:image" content="/preview.png" />
+
+  <!-- Google Fonts - Optimisé avec display=swap -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+  </noscript>
+
+  <!-- Google Tag Manager - Chargé de manière asynchrone -->
+  <script>
+    // Defer GTM loading to improve initial page load
+    window.addEventListener('load', function () {
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+          'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-5V6TCG4C');
+    });
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5V6TCG4C" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

@@ -8,7 +8,8 @@ export const translations = {
     },
     hero: {
       title: "Alexandre Pommier",
-      subtitle: "Étudiant en informatique à l'école 42 et développeur freelance, je développe mes compétences techniques à travers des projets innovants et challengeants. Passionné par les technologies modernes, je m'intéresse particulièrement au développement web, aux systèmes et à l'infrastructure.",
+      subtitle:
+        "Issu de l'école 42 et développeur freelance, opérationnel et orienté résultats, je mets l'innovation technique au service de solutions robustes, couvrant l'intégralité de la chaîne : du développement web à l'architecture système.",
       cta1: "Voir mes projets",
       cta2: "Me contacter",
     },
@@ -18,31 +19,38 @@ export const translations = {
       items: {
         nas: {
           title: "Homemade NAS",
-          description: "Serveur personnel avec OpenMediaVault, password manager auto-hébergé, Home Assistant, Portainer, Plex, Traefik pour une infrastructure complète.",
+          description:
+            "Serveur personnel avec OpenMediaVault, password manager auto-hébergé, Home Assistant, Portainer, Plex, Traefik pour une infrastructure complète.",
         },
         transcendence: {
           title: "Ft_Transcendence",
-          description: "Application web Pong social en temps réel avec React, NestJS, PostgreSQL, WebSocket et authentification sécurisée.",
+          description:
+            "Application web Pong social en temps réel avec React, NestJS, PostgreSQL, WebSocket et authentification sécurisée.",
         },
         cloud: {
           title: "Cloud-1",
-          description: "Infrastructure automatisée avec Docker et Ansible, incluant WordPress, PHPMyAdmin et MySQL containerisés.",
+          description:
+            "Infrastructure automatisée avec Docker et Ansible, incluant WordPress, PHPMyAdmin et MySQL containerisés.",
         },
         minishell: {
           title: "Minishell",
-          description: "Réimplémentation d'un shell bash en C avec gestion de processus, pipes, redirections et variables d'environnement.",
+          description:
+            "Réimplémentation d'un shell bash en C avec gestion de processus, pipes, redirections et variables d'environnement.",
         },
         cube3d: {
           title: "Cube3D",
-          description: "Moteur RayCaster 3D inspiré de Wolfenstein 3D, développé avec MiniLibX et algorithmes graphiques avancés.",
+          description:
+            "Moteur RayCaster 3D inspiré de Wolfenstein 3D, développé avec MiniLibX et algorithmes graphiques avancés.",
         },
         etsidemain: {
           title: "Site Et si demain...",
-          description: "Site web vitrine pour cabinet de conseil en transformation régénérative. Design moderne et responsive avec animations CSS, formulaire de contact et optimisations SEO.",
+          description:
+            "Site web vitrine pour cabinet de conseil en transformation régénérative. Design moderne et responsive avec animations CSS, formulaire de contact et optimisations SEO.",
         },
         avopieces: {
           title: "Site Avo Pièces",
-          description: "Plateforme juridique intelligente pour le cabinet AvoCab, spécialisée dans les procédures de divorce. Intègre un chatbot IA analysant les documents uploadés, système de gestion de comptes client/admin, prise de RDV en ligne et vitrine du cabinet.",
+          description:
+            "Plateforme juridique intelligente pour le cabinet AvoCab, spécialisée dans les procédures de divorce. Intègre un chatbot IA analysant les documents uploadés, système de gestion de comptes client/admin, prise de RDV en ligne et vitrine du cabinet.",
         },
       },
     },
@@ -68,7 +76,8 @@ export const translations = {
       send: "Envoyer le message",
     },
     footer: {
-      description: "Étudiant développeur à 42, passionné par les technologies web et systèmes. Créateur de solutions innovantes pour un avenir numérique.",
+      description:
+        "Étudiant développeur à 42, passionné par les technologies web et systèmes. Créateur de solutions innovantes pour un avenir numérique.",
       navigation: "Navigation",
       information: "Informations",
       legalNotice: "Mentions légales",
@@ -81,7 +90,8 @@ export const translations = {
     },
     cookies: {
       title: "Cookies",
-      description: "Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic.",
+      description:
+        "Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic.",
       accept: "Accepter",
       reject: "Refuser",
     },
@@ -110,7 +120,8 @@ export const translations = {
     },
     hero: {
       title: "Alexandre Pommier",
-      subtitle: "Computer science student at 42 school and freelance developer, I develop my technical skills through innovative and challenging projects. Passionate about modern technologies, I am particularly interested in web development, systems and infrastructure.",
+      subtitle:
+        "Graduate from 42 school and freelance developer, operational and results-oriented, I leverage technical innovation to deliver robust solutions, covering the entire chain: from web development to system architecture.",
       cta1: "View my projects",
       cta2: "Contact me",
     },
@@ -120,31 +131,38 @@ export const translations = {
       items: {
         nas: {
           title: "Homemade NAS",
-          description: "Personal server with OpenMediaVault, self-hosted password manager, Home Assistant, Portainer, Plex, Traefik for a complete infrastructure.",
+          description:
+            "Personal server with OpenMediaVault, self-hosted password manager, Home Assistant, Portainer, Plex, Traefik for a complete infrastructure.",
         },
         transcendence: {
           title: "Ft_Transcendence",
-          description: "Real-time social Pong web application with React, NestJS, PostgreSQL, WebSocket and secure authentication.",
+          description:
+            "Real-time social Pong web application with React, NestJS, PostgreSQL, WebSocket and secure authentication.",
         },
         cloud: {
           title: "Cloud-1",
-          description: "Automated infrastructure with Docker and Ansible, including containerized WordPress, PHPMyAdmin and MySQL.",
+          description:
+            "Automated infrastructure with Docker and Ansible, including containerized WordPress, PHPMyAdmin and MySQL.",
         },
         minishell: {
           title: "Minishell",
-          description: "Bash shell reimplementation in C with process management, pipes, redirections and environment variables.",
+          description:
+            "Bash shell reimplementation in C with process management, pipes, redirections and environment variables.",
         },
         cube3d: {
           title: "Cube3D",
-          description: "3D RayCaster engine inspired by Wolfenstein 3D, developed with MiniLibX and advanced graphics algorithms.",
+          description:
+            "3D RayCaster engine inspired by Wolfenstein 3D, developed with MiniLibX and advanced graphics algorithms.",
         },
         etsidemain: {
           title: "Et si demain... Website",
-          description: "Showcase website for regenerative transformation consulting firm. Modern responsive design with CSS animations, contact form and SEO optimizations.",
+          description:
+            "Showcase website for regenerative transformation consulting firm. Modern responsive design with CSS animations, contact form and SEO optimizations.",
         },
         avopieces: {
           title: "Avo Pieces Website",
-          description: "Intelligent legal platform for AvoCab law firm, specialized in divorce procedures. Features AI chatbot analyzing uploaded documents, client/admin account management system, online appointment booking and law firm showcase.",
+          description:
+            "Intelligent legal platform for AvoCab law firm, specialized in divorce procedures. Features AI chatbot analyzing uploaded documents, client/admin account management system, online appointment booking and law firm showcase.",
         },
       },
     },
@@ -170,7 +188,8 @@ export const translations = {
       send: "Send message",
     },
     footer: {
-      description: "Developer student at 42, passionate about web technologies and systems. Creator of innovative solutions for a digital future.",
+      description:
+        "Developer student at 42, passionate about web technologies and systems. Creator of innovative solutions for a digital future.",
       navigation: "Navigation",
       information: "Information",
       legalNotice: "Legal Notice",
@@ -183,7 +202,8 @@ export const translations = {
     },
     cookies: {
       title: "Cookies",
-      description: "We use cookies to improve your experience and analyze traffic.",
+      description:
+        "We use cookies to improve your experience and analyze traffic.",
       accept: "Accept",
       reject: "Reject",
     },
